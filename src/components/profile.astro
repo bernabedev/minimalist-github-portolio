@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+import Button from "./ui/button.astro";
+import CardContent from "./ui/card/card-content.astro";
+import Card from "./ui/card/card.astro";
+const socials = [
+  {
+    name: "Github",
+    link: "https://github.com/achris-alonzo30",
+  },
+  {
+    name: "LinkedIn",
+    link: "https://linkedin.com/in/lonzochris",
+  },
+  {
+    name: "X (Twitter)",
+    link: "https://x.com/lonz_chris",
+  },
+];
+---
+
+<Card>
+  <CardContent className="pt-6">
+    <div class="flex flex-col items-start gap-2">
+      <div
+        class="flex flex-row md:flex-col items-center md:items-start w-full gap-4"
+      >
+        <Image
+          width={150}
+          height={150}
+          quality={100}
+          src="/avatar.webp"
+          alt="Profile Picture"
+          class="rounded-full size-12 md:w-full h-auto object-cover border-2"
+        />
+        <div class="flex flex-col items-start justify-center">
+          <h1 class="font-bold md:mt-4 text-xl md:text-2xl">Chris Lonzo</h1>
+          <p class="text-sm md:text-base text-muted-foreground">
+            Solopreneur Developer
+          </p>
+        </div>
+      </div>
+      <p class="mt-2 text-start text-sm text-muted-foreground">
+        I am a solopreneur developer with a passion for building products that
+        solve real-world problems.
+      </p>
+      <Button className="mt-4 w-full">
+        {/* TODO: Add resume link */}
+        {/* or link to schedule a meeting using Calendly or Cal*/}
+        <a target="_blank" href="/resume.pdf" class="font-semibold">
+          CONTACT ME
+        </a>
+      </Button>
+      <div
+        class="mt-4 flex flex-col space-y-2 border-t border-border pt-4 w-full"
+      >
+        {
+          socials.map((s, i) => {
+            const parts = s.link.split("/");
+            const username = parts[parts.length - 1];
+            return (
+              <a
+                href={s.link}
+                target="_blank"
+                aria-label={`${s.name} Logo`}
+                class="cursor-pointer flex items-center gap-2 group"
+              >
+                {/* {s.icon} */}
+                <p class="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
+                  /{username}
+                </p>
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </CardContent>
+</Card>

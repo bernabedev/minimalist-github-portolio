@@ -1,0 +1,79 @@
+---
+import ExternalLink from "../icons/external-link.astro";
+import CardContent from "./ui/card/card-content.astro";
+import Card from "./ui/card/card.astro";
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description:
+      "A full-stack e-commerce solution with React, Node.js, and MongoDB",
+    tech: "React",
+    link: "#",
+  },
+  {
+    title: "Task Management App",
+    description: "A productivity app built with React Native and Firebase",
+    tech: "React Native",
+    link: "#",
+  },
+  {
+    title: "Data Visualization Dashboard",
+    description: "An interactive dashboard using D3.js and Vue.js",
+    tech: "Vue.js",
+    link: "#",
+  },
+  {
+    title: "AI Chatbot",
+    description:
+      "A machine learning powered chatbot using Python and TensorFlow",
+    tech: "Python",
+    link: "#",
+  },
+];
+const techColors = {
+  React: "bg-blue-500",
+  "React Native": "bg-green-500",
+  "Vue.js": "bg-purple-500",
+  Python: "bg-yellow-500",
+};
+---
+
+<h2 class="text-xl font-bold mb-4">Featured Projects</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+  {
+    projects.map((p, i) => (
+      <Card key={i}>
+        <CardContent className="pt-6 h-full">
+          <div class="flex flex-col h-full">
+            <a href={p.link} class="font-semibold text-primary hover:underline">
+              {p.title}
+            </a>
+            <p class="text-sm text-muted-foreground mt-1 mb-4">
+              {p.description}
+            </p>
+            <div class="mt-auto flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <div
+                  class:list={[
+                    "size-4 rounded-full",
+                    techColors[p.tech as keyof typeof techColors],
+                  ]}
+                />
+                <span class="text-xs font-medium text-muted-foreground">
+                  {p.tech}
+                </span>
+              </div>
+              <a
+                href={p.link}
+                class="flex items-center gap-2 text-sm text-primary hover:underline"
+              >
+                View Project
+                <ExternalLink class="inline-block size-3" />
+              </a>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    ))
+  }
+</div>

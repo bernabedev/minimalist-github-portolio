@@ -1,0 +1,18 @@
+---
+export interface Props {
+  className?: string;
+  [key: string]: any;
+}
+
+const { className, ...props } = Astro.props;
+---
+
+<div
+  class:list={[
+    "rounded-lg border bg-card text-card-foreground shadow-sm border-dashed",
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</div>

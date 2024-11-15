@@ -1,5 +1,8 @@
 ---
-
+import AboutMe from "../components/about-me.astro";
+import Experience from "../components/experience.astro";
+import Projects from "../components/projects.astro";
+import Sidebar from "../components/sidebar.astro";
 ---
 
 <html lang="en">
@@ -10,7 +13,21 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-background min-h-screen">
+		<div class="container max-w-screen-lg mx-auto px-4 py-8">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				{/* (Profile and Skills) Sidebar Section */}
+				<Sidebar />
+				{/* Main Section */}
+				<main class="md:col-span-2">
+					{/* About Me Section */}
+					<AboutMe />
+					{/* Projects Section */}
+					<Projects />
+					{/* Experience Section */}
+					<Experience />
+				</main>
+			</div>
+		</div>
 	</body>
 </html>

@@ -1,0 +1,14 @@
+---
+export interface CardTitleProps {
+  className?: string;
+  [key: string]: any;
+}
+const { className, ...props } = Astro.props;
+---
+
+<div
+  class:list={["text-2xl font-semibold leading-none tracking-tight", className]}
+  {...props}
+>
+  <slot />
+</div>

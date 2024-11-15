@@ -1,0 +1,11 @@
+---
+export interface CardDescriptionProps {
+  className?: string;
+  [key: string]: any;
+}
+const { className, ...props } = Astro.props;
+---
+
+<div class:list={["text-sm text-muted-foreground", className]} {...props}>
+  <slot />
+</div>

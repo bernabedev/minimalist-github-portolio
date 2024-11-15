@@ -1,0 +1,19 @@
+---
+import CardContent from "./ui/card/card-content.astro";
+import CardHeader from "./ui/card/card-header.astro";
+import CardTitle from "./ui/card/card-title.astro";
+import Card from "./ui/card/card.astro";
+---
+
+<Card className="mb-6">
+  <CardHeader>
+    <CardTitle>About Me</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <p class="text-muted-foreground">
+      {/* Write 1-2 sentences about yourself */}
+      I am a software engineer with a passion for building scalable and efficient
+      web applications.
+    </p>
+  </CardContent>
+</Card>
