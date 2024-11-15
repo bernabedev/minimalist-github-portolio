@@ -1,3 +1,7 @@
+import GithubIcon from "./icons/socials/github-icon.astro";
+import LinkedinIcon from "./icons/socials/linkedin-icon.astro";
+import TwitterIcon from "./icons/socials/twitter-icon.astro";
+
 export const data = {
   profile: {
     name: "Freilyn Bernabe",
@@ -13,14 +17,17 @@ export const data = {
       {
         name: "Github",
         link: "https://github.com/freidev",
+        icon: GithubIcon,
       },
       {
         name: "LinkedIn",
         link: "https://linkedin.com/in/freilyn-bernabe",
+        icon: LinkedinIcon,
       },
       {
         name: "X (Twitter)",
         link: "https://x.com/bernabedev",
+        icon: TwitterIcon,
       },
     ],
   },

@@ -50,7 +50,7 @@ const { name, title, description, socials, contact } = data.profile;
                 aria-label={`${s.name} Logo`}
                 class="cursor-pointer flex items-center gap-2 group"
               >
-                {/* {s.icon} */}
+                {s.icon && <s.icon class="size-4" />}
                 <p class="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
                   /{username}
                 </p>
