@@ -3,31 +3,33 @@ import AboutMe from "../components/about-me.astro";
 import Experience from "../components/experience.astro";
 import Projects from "../components/projects.astro";
 import Sidebar from "../components/sidebar.astro";
+import { data } from "../data";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Freilyn Bernabe</title>
-	</head>
-	<body class="min-h-screen">
-		<div class="container max-w-screen-lg mx-auto px-4 py-8">
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-				{/* (Profile and Skills) Sidebar Section */}
-				<Sidebar />
-				{/* Main Section */}
-				<main class="md:col-span-2">
-					{/* About Me Section */}
-					<AboutMe />
-					{/* Projects Section */}
-					<Projects />
-					{/* Experience Section */}
-					<Experience />
-				</main>
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Freilyn Bernabe | Software Engineer</title>
+    <meta name="description" content={data.profile.description} />
+  </head>
+  <body class="min-h-screen">
+    <div class="container max-w-screen-lg mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* (Profile and Skills) Sidebar Section */}
+        <Sidebar />
+        {/* Main Section */}
+        <main class="md:col-span-2">
+          {/* About Me Section */}
+          <AboutMe />
+          {/* Projects Section */}
+          <Projects />
+          {/* Experience Section */}
+          <Experience />
+        </main>
+      </div>
+    </div>
+  </body>
 </html>
