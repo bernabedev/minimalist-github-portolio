@@ -1,9 +1,10 @@
 ---
+import { data } from "@data";
+import Button from "@ui/button.astro";
+import CardContent from "@ui/card/card-content.astro";
+import Card from "@ui/card/card.astro";
 import { Image } from "astro:assets";
-import { data } from "../data";
-import Button from "./ui/button.astro";
-import CardContent from "./ui/card/card-content.astro";
-import Card from "./ui/card/card.astro";
+
 const { name, title, description, socials, contact } = data.profile;
 ---
 

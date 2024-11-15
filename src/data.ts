@@ -1,6 +1,6 @@
-import GithubIcon from "./icons/socials/github-icon.astro";
-import LinkedinIcon from "./icons/socials/linkedin-icon.astro";
-import TwitterIcon from "./icons/socials/twitter-icon.astro";
+import GithubIcon from "@icons/socials/github-icon.astro";
+import LinkedinIcon from "@icons/socials/linkedin-icon.astro";
+import TwitterIcon from "@icons/socials/twitter-icon.astro";
 
 export const data = {
   profile: {
