@@ -1,53 +1,65 @@
 export const data = {
   profile: {
-    name: "Kamal",
+    name: "Freilyn Bernabe",
     title: "Software Engineer",
     description:
       "I am a software engineer with a passion for building scalable and efficient web applications.",
     location: "Bengaluru, India",
     contact: {
-      link: "https://github.com/achris-alonzo30",
+      link: "https://cal.com/freilyn-bernabe-aooipq/15min",
       label: "Contact Me",
     },
     socials: [
       {
         name: "Github",
-        link: "https://github.com/achris-alonzo30",
+        link: "https://github.com/freidev",
       },
       {
         name: "LinkedIn",
-        link: "https://linkedin.com/in/lonzochris",
+        link: "https://linkedin.com/in/freilyn-bernabe",
       },
       {
         name: "X (Twitter)",
-        link: "https://x.com/lonz_chris",
+        link: "https://x.com/bernabedev",
       },
     ],
   },
   skills: [
     {
+      name: "Node.js",
+      color: "417e38",
+    },
+    {
+      name: "Express.js",
+      color: "000000",
+    },
+    {
+      name: "Nest.js",
+      color: "ea2845",
+    },
+    {
       name: "React",
+      color: "60c7de",
     },
     {
       name: "Next.js",
+      color: "000000",
     },
     {
       name: "Astro",
+      color: "ff5d00",
     },
     {
       name: "Tailwind CSS",
+      color: "0ea5e9",
     },
     {
       name: "TypeScript",
+      color: "#3178c6",
     },
     {
       name: "JavaScript",
-    },
-    {
-      name: "HTML",
-    },
-    {
-      name: "CSS",
+      color: "f0dc4e",
     },
   ],
   aboutMe: {

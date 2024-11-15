@@ -14,7 +14,7 @@ import Card from "./ui/card/card.astro";
   <CardContent>
     <div class="flex flex-wrap gap-2">
       {
-        data.skills.map(({ name }, i) => (
+        data.skills.map(({ name, color }, i) => (
           <Badge key={i} variant="secondary">
             {name}
           </Badge>
