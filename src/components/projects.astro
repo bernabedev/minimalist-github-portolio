@@ -1,35 +1,9 @@
 ---
+import { data } from "../data";
 import ExternalLink from "../icons/external-link.astro";
 import CardContent from "./ui/card/card-content.astro";
 import Card from "./ui/card/card.astro";
-const projects = [
-  {
-    title: "E-commerce Platform",
-    description:
-      "A full-stack e-commerce solution with React, Node.js, and MongoDB",
-    tech: "React",
-    link: "#",
-  },
-  {
-    title: "Task Management App",
-    description: "A productivity app built with React Native and Firebase",
-    tech: "React Native",
-    link: "#",
-  },
-  {
-    title: "Data Visualization Dashboard",
-    description: "An interactive dashboard using D3.js and Vue.js",
-    tech: "Vue.js",
-    link: "#",
-  },
-  {
-    title: "AI Chatbot",
-    description:
-      "A machine learning powered chatbot using Python and TensorFlow",
-    tech: "Python",
-    link: "#",
-  },
-];
+
 const techColors = {
   React: "bg-blue-500",
   "React Native": "bg-green-500",
@@ -41,7 +15,7 @@ const techColors = {
 <h2 class="text-xl font-bold mb-4">Featured Projects</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
   {
-    projects.map((p, i) => (
+    data.projects.map((p, i) => (
       <Card key={i}>
         <CardContent className="pt-6 h-full">
           <div class="flex flex-col h-full">

@@ -1,22 +1,10 @@
 ---
 import { Image } from "astro:assets";
+import { data } from "../data";
 import Button from "./ui/button.astro";
 import CardContent from "./ui/card/card-content.astro";
 import Card from "./ui/card/card.astro";
-const socials = [
-  {
-    name: "Github",
-    link: "https://github.com/achris-alonzo30",
-  },
-  {
-    name: "LinkedIn",
-    link: "https://linkedin.com/in/lonzochris",
-  },
-  {
-    name: "X (Twitter)",
-    link: "https://x.com/lonz_chris",
-  },
-];
+const { name, title, description, socials, contact } = data.profile;
 ---
 
 <Card>
@@ -34,24 +22,18 @@ const socials = [
           class="rounded-full size-12 md:w-full h-auto object-cover"
         />
         <div class="flex flex-col items-start justify-center">
-          <h1 class="font-bold md:mt-4 text-xl md:text-2xl">Freilyn Bernabe</h1>
+          <h1 class="font-bold md:mt-4 text-xl md:text-2xl">{name}</h1>
           <p class="text-sm md:text-base text-muted-foreground">
-            Full Stack Developer
+            {title}
           </p>
         </div>
       </div>
       <p class="mt-2 text-start text-sm text-muted-foreground">
-        I am a solopreneur developer with a passion for building products that
-        solve real-world problems.
+        {description}
       </p>
-      <a
-        target="_blank"
-        href="https://cal.com/freilyn-bernabe-aooipq/15min"
-        class="font-semibold w-full"
-      >
+      <a target="_blank" href={contact.link} class="font-semibold w-full">
         <Button className="mt-4 w-full">
-          {/* or link to schedule a meeting using Calendly or Cal*/}
-          CONTACT ME
+          {contact.label}
         </Button>
       </a>
       <div
