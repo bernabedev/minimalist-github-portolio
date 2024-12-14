@@ -106,7 +106,7 @@ export const data = {
     {
       role: "Senior Developer Web",
       company: "Minicode SRL",
-      logo: "https://www.minicode.com.do/assets/img/logo-minicode-18.png",
+      logo: "/companies/minicode.png",
       duration: "2021 - Present",
       description:
         "Lead developer for multiple high-impact projects, mentoring junior developers, and implementing best practices.",
