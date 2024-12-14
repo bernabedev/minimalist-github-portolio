@@ -62,6 +62,9 @@ export default {
 				'800': '#806013',
 				'900': '#6d4e16',
 				'950': '#402a08',
+			},
+			black: {
+				DEFAULT: '#000',
 			}
 		},
 		borderColor: {

@@ -5,10 +5,10 @@ import CardContent from "@ui/card/card-content.astro";
 import Card from "@ui/card/card.astro";
 
 const techColors = {
-  React: "bg-blue-500",
-  "React Native": "bg-green-500",
-  "Vue.js": "bg-purple-500",
-  Python: "bg-yellow-500",
+  React: "#0DDBFF",
+  "Vue.js": "#42b883",
+  "Next.js": "#000000",
+  NestJS: "#e0234e",
 };
 ---
 
@@ -19,7 +19,11 @@ const techColors = {
       <Card key={i}>
         <CardContent className="pt-6 h-full">
           <div class="flex flex-col h-full">
-            <a href={p.link} class="font-semibold text-primary hover:underline">
+            <a
+              href={p.link}
+              class="font-semibold text-primary hover:underline"
+              target="_blank"
+            >
               {p.title}
             </a>
             <p class="text-sm text-muted-foreground mt-1 mb-4">
@@ -28,10 +32,8 @@ const techColors = {
             <div class="mt-auto flex items-center justify-between">
               <div class="flex items-center space-x-2">
                 <div
-                  class:list={[
-                    "size-4 rounded-full",
-                    techColors[p.tech as keyof typeof techColors],
-                  ]}
+                  class:list={["size-4 rounded-full"]}
+                  style={`background-color: ${techColors[p.tech as keyof typeof techColors]}`}
                 />
                 <span class="text-xs font-medium text-muted-foreground">
                   {p.tech}
@@ -40,6 +42,7 @@ const techColors = {
               <a
                 href={p.link}
                 class="flex items-center gap-2 text-sm text-primary hover:underline"
+                target="_blank"
               >
                 View Project
                 <ExternalLink class="inline-block size-3" />

@@ -11,17 +11,24 @@ import { Image } from "astro:assets";
   <CardContent className="pt-6">
     <ul class="space-y-8">
       {
-        data.jobs.map((j, i) => (
+        data.jobs.map((j) => (
           <li class="border-b last:border-b-0 pb-8 last:pb-0">
             {/* Job Details */}
             <div class="flex items-center space-x-4">
-              <Image
-                src={j.logo}
-                alt={j.company}
-                width={40}
-                height={40}
-                class="rounded-md border shadow-md object-cover"
-              />
+              <div
+                class:list={[
+                  "rounded-md border shadow-md size-10 flex justify-center items-center p-1",
+                  j.dark && "bg-black",
+                ]}
+              >
+                <Image
+                  src={j.logo}
+                  alt={j.company}
+                  width={40}
+                  height={40}
+                  class={"object-cover"}
+                />
+              </div>
               <div>
                 <h3 class="font-semibold">{j.role}</h3>
                 <p class="text-sm text-muted-foreground">{j.company}</p>

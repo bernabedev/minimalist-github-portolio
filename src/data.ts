@@ -77,58 +77,58 @@ export const data = {
   },
   projects: [
     {
+      title: "Marketplace Store Web",
+      description:
+        "A modern marketplace platform developed using Next.js, enabling seamless buying and selling of products with advanced features.",
+      tech: "Next.js",
+      link: "https://www.bernalux.com",
+    },
+    {
+      title: "Marketplace Backend",
+      description: "A robust backend system for a marketplace platform built with NestJS, providing scalable APIs and efficient data handling.",
+      tech: "NestJS",
+      link: "https://api.bernalux.com/reference"
+    },
+    {
+      title: "Marketplace Admin",
+      description: "An admin panel for managing marketplace operations, developed with Next.js for a seamless user experience.",
+      tech: "Next.js",
+      link: "https://admin.bernalux.com"
+    },    
+    {
       title: "E-commerce Platform",
-      description:
-        "A full-stack e-commerce solution with React, Node.js, and MongoDB",
-      tech: "React",
-      link: "#",
-    },
-    {
-      title: "Task Management App",
-      description: "A productivity app built with React Native and Firebase",
-      tech: "React Native",
-      link: "#",
-    },
-    {
-      title: "Data Visualization Dashboard",
-      description: "An interactive dashboard using D3.js and Vue.js",
+      description: "An intuitive and responsive e-commerce platform built using Vue.js, designed for efficient online shopping experiences.",
       tech: "Vue.js",
-      link: "#",
-    },
-    {
-      title: "AI Chatbot",
-      description:
-        "A machine learning powered chatbot using Python and TensorFlow",
-      tech: "Python",
-      link: "#",
-    },
+      link: "https://ecommerce.mundomovil.com.do"
+    }    
   ],
   jobs: [
     {
-      role: "Senior Full-Stack Developer",
-      company: "Tech Innovators Inc.",
-      logo: "/company.svg",
-      duration: "2020 - Present",
+      role: "Senior Developer Web",
+      company: "Minicode SRL",
+      logo: "https://www.minicode.com.do/assets/img/logo-minicode-18.png",
+      duration: "2021 - Present",
       description:
         "Lead developer for multiple high-impact projects, mentoring junior developers, and implementing best practices.",
-      link: "https://techinnovators.com",
+      link: "https://mincode.com.do",
       images: [],
+      dark: true,
     },
+    // {
+    //   role: "Senior Full-Stack Developer",
+    //   company: "Tech Innovators Inc.",
+    //   logo: "/company.svg",
+    //   duration: "2018 - 2020",
+    //   description:
+    //     "Developed and maintained various client projects, focusing on responsive design and performance optimization.",
+    //   link: "https://websolutions.com",
+    //   images: ["/devvault.png", "/devvault.png"],
+    // },
     {
-      role: "Senior Full-Stack Developer",
-      company: "Tech Innovators Inc.",
-      logo: "/company.svg",
-      duration: "2018 - 2020",
-      description:
-        "Developed and maintained various client projects, focusing on responsive design and performance optimization.",
-      link: "https://websolutions.com",
-      images: ["/devvault.png", "/devvault.png"],
-    },
-    {
-      role: "Senior Full-Stack Developer",
-      company: "Tech Innovators Inc.",
-      logo: "/company.svg",
-      duration: "2016 - 2018",
+      role: "Developer Web",
+      company: "ADGSystems E.I.R.L.",
+      logo: "/companies/adg-systems.png",
+      duration: "2020 - 2020 (4 months)",
       description:
         "Assisted in the development of web applications, gained experience in agile methodologies and version control.",
       link: "https://startupventures.com",
