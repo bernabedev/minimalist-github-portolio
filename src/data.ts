@@ -85,22 +85,25 @@ export const data = {
     },
     {
       title: "Marketplace Backend",
-      description: "A robust backend system for a marketplace platform built with NestJS, providing scalable APIs and efficient data handling.",
+      description:
+        "A robust backend system for a marketplace platform built with NestJS, providing scalable APIs and efficient data handling.",
       tech: "NestJS",
-      link: "https://api.bernalux.com/reference"
+      link: "https://api.bernalux.com/reference",
     },
     {
       title: "Marketplace Admin",
-      description: "An admin panel for managing marketplace operations, developed with Next.js for a seamless user experience.",
+      description:
+        "An admin panel for managing marketplace operations, developed with Next.js for a seamless user experience.",
       tech: "Next.js",
-      link: "https://admin.bernalux.com"
-    },    
+      link: "https://admin.bernalux.com",
+    },
     {
       title: "E-commerce Platform",
-      description: "An intuitive and responsive e-commerce platform built using Vue.js, designed for efficient online shopping experiences.",
+      description:
+        "An intuitive and responsive e-commerce platform built using Vue.js, designed for efficient online shopping experiences.",
       tech: "Vue.js",
-      link: "https://ecommerce.mundomovil.com.do"
-    }    
+      link: "https://ecommerce.mundomovil.com.do",
+    },
   ],
   jobs: [
     {
@@ -133,6 +136,16 @@ export const data = {
         "Assisted in the development of web applications, gained experience in agile methodologies and version control.",
       link: "https://startupventures.com",
       images: ["/devvault.png", "/devvault.png"],
+    },
+    {
+      role: "Freelancer",
+      company: "Self-Employed",
+      logo: "/companies/freelancer.svg",
+      duration: "2019 - 2020",
+      description:
+        "Delivered web development services for diverse clients, specializing in creating responsive websites, optimizing performance, and developing custom solutions tailored to client needs.",
+      link: "",
+      images: [],
     },
   ],
 };
