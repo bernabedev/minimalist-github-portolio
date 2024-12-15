@@ -1,0 +1,58 @@
+---
+import SunIcon from "@icons/sun.astro";
+import MoonIcon from "@icons/moon.astro";
+---
+
+<script>
+  const initThemeToggle = () => {
+    const themeToggleBtn = document.getElementById("theme-toggle-btn");
+    const sunIcon = document.getElementById("light");
+    const moonIcon = document.getElementById("dark");
+
+    const toggleTheme = () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      updateIcons(isDark);
+    };
+
+    const updateIcons = (isDark: boolean) => {
+      if (sunIcon) {
+        sunIcon.style.opacity = isDark ? "0" : "1";
+      }
+      if (moonIcon) {
+        moonIcon.style.opacity = isDark ? "1" : "0";
+      }
+    };
+
+    const savedTheme = localStorage.getItem("theme") || "light";
+    const isDark = savedTheme === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+    updateIcons(isDark);
+
+    themeToggleBtn?.addEventListener("click", toggleTheme);
+  };
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("DOMContentLoaded", initThemeToggle);
+  }
+</script>
+
+<div class="relative ml-1 mr-1 pt-2">
+  <button
+    id="theme-toggle-btn"
+    class="appearance-none border-none flex hover:scale-125 transition"
+  >
+    <span class="sr-only">Elige el tema</span>
+    <SunIcon id="light" class="theme-toggle-icon size-5 transition-all" />
+    <MoonIcon
+      id="dark"
+      class="theme-toggle-icon absolute size-5 transition-all"
+    />
+  </button>
+</div>
+
+<style>
+  .theme-toggle-icon {
+    transition: opacity 0.3s ease-in-out;
+  }
+</style>
