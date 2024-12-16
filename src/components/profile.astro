@@ -32,13 +32,17 @@ const { name, title, description, socials, contact } = data.profile
       <p class='mt-2 text-start text-sm text-muted-foreground'>
         {description}
       </p>
-      <a target='_blank' href={contact.link} class='w-full font-semibold'>
+      <a
+        target='_blank'
+        href={contact.link}
+        class='no-print w-full font-semibold'
+      >
         <Button className='mt-4 w-full'>
           {contact.label}
         </Button>
       </a>
       <div
-        class='mt-4 flex w-full flex-col space-y-2 border-t pt-4 dark:border-white/10'
+        class='no-print mt-4 flex w-full flex-col space-y-2 border-t pt-4 dark:border-white/10'
       >
         {
           socials.map((s, i) => {

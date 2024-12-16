@@ -39,3 +39,23 @@ import { data } from '@data'
     </div>
   </body>
 </html>
+
+<style is:global>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+
+    .print {
+      display: block !important;
+    }
+
+    astro-dev-toolbar {
+      display: none !important;
+    }
+
+    article {
+      break-inside: avoid;
+    }
+  }
+</style>

@@ -1,7 +1,24 @@
 ---
+import Button from '@components/ui/button.astro'
 import ThemeToggle from './theme-toggle.astro'
+import Printer from '@icons/printer.astro'
 ---
 
-<header class='mx-auto flex max-w-screen-lg justify-end'>
+<header
+  class='no-print mx-auto flex max-w-screen-lg items-center justify-end gap-2 pt-2'
+>
+  <button
+    id='print'
+    class='items-center px-0 py-0 transition-transform hover:scale-125'
+  >
+    <Printer class='w-5' />
+  </button>
   <ThemeToggle />
 </header>
+
+<script>
+  const $printBtn = document.getElementById('print')
+  $printBtn?.addEventListener('click', () => {
+    window.print()
+  })
+</script>
