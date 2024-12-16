@@ -15,7 +15,11 @@ import Card from "@ui/card/card.astro";
     <div class="flex flex-wrap gap-2">
       {
         data.skills.map(({ name, color }, i) => (
-          <Badge key={i} variant="secondary">
+          <Badge
+            key={i}
+            variant="secondary"
+            className="dark:text-white/80 dark:border-white/10"
+          >
             {name}
           </Badge>
         ))
