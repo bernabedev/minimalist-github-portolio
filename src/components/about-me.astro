@@ -1,21 +1,21 @@
 ---
-import { data } from "@data";
-import CardContent from "@ui/card/card-content.astro";
-import CardHeader from "@ui/card/card-header.astro";
-import CardTitle from "@ui/card/card-title.astro";
-import Card from "@ui/card/card.astro";
+import { data } from '@data'
+import CardContent from '@ui/card/card-content.astro'
+import CardHeader from '@ui/card/card-header.astro'
+import CardTitle from '@ui/card/card-title.astro'
+import Card from '@ui/card/card.astro'
 
 const {
-  aboutMe: { title, description },
-} = data;
+  aboutMe: { title, description }
+} = data
 ---
 
-<Card className="mb-6">
+<Card className='mb-6'>
   <CardHeader>
     <CardTitle>{title}</CardTitle>
   </CardHeader>
   <CardContent>
-    <p class="text-muted-foreground">
+    <p class='text-muted-foreground'>
       {description}
     </p>
   </CardContent>

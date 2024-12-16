@@ -1,24 +1,24 @@
 ---
-import { data } from "@data";
-import CalendarDays from "@icons/calendar-days.astro";
-import CardContent from "@ui/card/card-content.astro";
-import Card from "@ui/card/card.astro";
-import { Image } from "astro:assets";
+import { data } from '@data'
+import CalendarDays from '@icons/calendar-days.astro'
+import CardContent from '@ui/card/card-content.astro'
+import Card from '@ui/card/card.astro'
+import { Image } from 'astro:assets'
 ---
 
-<h2 class="text-xl font-bold mb-4">Work Experience</h2>
+<h2 class='mb-4 text-xl font-bold'>Work Experience</h2>
 <Card>
-  <CardContent className="pt-6">
-    <ul class="space-y-8">
+  <CardContent className='pt-6'>
+    <ul class='space-y-8'>
       {
         data.jobs.map((j) => (
-          <li class="border-b dark:border-white/10 last:border-b-0 pb-8 last:pb-0">
+          <li class='border-b pb-8 last:border-b-0 last:pb-0 dark:border-white/10'>
             {/* Job Details */}
-            <div class="flex items-center space-x-4">
+            <div class='flex items-center space-x-4'>
               <div
                 class:list={[
-                  "rounded-md border shadow-md size-10 flex justify-center items-center p-1 dark:border-white/10",
-                  j.dark && "bg-[#1e1e1e0f]",
+                  'flex size-10 items-center justify-center rounded-md border p-1 shadow-md dark:border-white/10',
+                  j.dark && 'bg-[#1e1e1e0f]'
                 ]}
               >
                 <Image
@@ -26,19 +26,19 @@ import { Image } from "astro:assets";
                   alt={j.company}
                   width={40}
                   height={40}
-                  class={"object-cover"}
+                  class={'object-cover'}
                 />
               </div>
               <div>
-                <h3 class="font-semibold">{j.role}</h3>
-                <p class="text-sm text-muted-foreground">{j.company}</p>
+                <h3 class='font-semibold'>{j.role}</h3>
+                <p class='text-sm text-muted-foreground'>{j.company}</p>
               </div>
             </div>
-            <p class="text-xs text-muted-foreground mt-2 flex items-center">
-              <CalendarDays class="size-3 mr-2" />
+            <p class='mt-2 flex items-center text-xs text-muted-foreground'>
+              <CalendarDays class='mr-2 size-3' />
               {j.duration}
             </p>
-            <p class="text-sm mt-2">{j.description}</p>
+            <p class='mt-2 text-sm'>{j.description}</p>
             {/* Job Images */}
             {/* <JobImages
               role={j.role}

@@ -1,11 +1,11 @@
 ---
 export interface CardHeaderProps {
-  className?: string;
-  [key: string]: any;
+  className?: string
+  [key: string]: any
 }
-const { className, ...props } = Astro.props;
+const { className, ...props } = Astro.props
 ---
 
-<div class:list={["flex flex-col space-y-1.5 p-6", className]} {...props}>
+<div class:list={['flex flex-col space-y-1.5 p-6', className]} {...props}>
   <slot />
 </div>

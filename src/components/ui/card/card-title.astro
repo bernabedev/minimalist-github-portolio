@@ -1,13 +1,13 @@
 ---
 export interface CardTitleProps {
-  className?: string;
-  [key: string]: any;
+  className?: string
+  [key: string]: any
 }
-const { className, ...props } = Astro.props;
+const { className, ...props } = Astro.props
 ---
 
 <div
-  class:list={["text-2xl font-semibold leading-none tracking-tight", className]}
+  class:list={['text-2xl font-semibold leading-none tracking-tight', className]}
   {...props}
 >
   <slot />

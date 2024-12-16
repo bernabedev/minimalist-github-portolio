@@ -1,51 +1,51 @@
 ---
-import { data } from "@data";
-import ExternalLink from "@icons/external-link.astro";
-import CardContent from "@ui/card/card-content.astro";
-import Card from "@ui/card/card.astro";
+import { data } from '@data'
+import ExternalLink from '@icons/external-link.astro'
+import CardContent from '@ui/card/card-content.astro'
+import Card from '@ui/card/card.astro'
 
 const techColors = {
-  React: "#0DDBFF",
-  "Vue.js": "#42b883",
-  "Next.js": "#000000",
-  NestJS: "#e0234e",
-};
+  React: '#0DDBFF',
+  'Vue.js': '#42b883',
+  'Next.js': '#000000',
+  NestJS: '#e0234e'
+}
 ---
 
-<h2 class="text-xl font-bold mb-4">Featured Projects</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<h2 class='mb-4 text-xl font-bold'>Featured Projects</h2>
+<div class='mb-6 grid grid-cols-1 gap-4 md:grid-cols-2'>
   {
     data.projects.map((p, i) => (
       <Card key={i}>
-        <CardContent className="pt-6 h-full">
-          <div class="flex flex-col h-full">
+        <CardContent className='pt-6 h-full'>
+          <div class='flex h-full flex-col'>
             <a
               href={p.link}
-              class="font-semibold text-primary dark:text-white hover:underline"
-              target="_blank"
+              class='font-semibold text-primary hover:underline dark:text-white'
+              target='_blank'
             >
               {p.title}
             </a>
-            <p class="text-sm text-muted-foreground mt-1 mb-4">
+            <p class='mb-4 mt-1 text-sm text-muted-foreground'>
               {p.description}
             </p>
-            <div class="mt-auto flex items-center justify-between">
-              <div class="flex items-center space-x-2">
+            <div class='mt-auto flex items-center justify-between'>
+              <div class='flex items-center space-x-2'>
                 <div
-                  class:list={["size-4 rounded-full border border-white/10"]}
+                  class:list={['size-4 rounded-full border border-white/10']}
                   style={`background-color: ${techColors[p.tech as keyof typeof techColors]}`}
                 />
-                <span class="text-xs font-medium text-muted-foreground">
+                <span class='text-xs font-medium text-muted-foreground'>
                   {p.tech}
                 </span>
               </div>
               <a
                 href={p.link}
-                class="flex items-center gap-2 text-sm text-primary dark:text-white hover:underline"
-                target="_blank"
+                class='flex items-center gap-2 text-sm text-primary hover:underline dark:text-white'
+                target='_blank'
               >
                 View Project
-                <ExternalLink class="inline-block size-3" />
+                <ExternalLink class='inline-block size-3' />
               </a>
             </div>
           </div>

@@ -1,24 +1,24 @@
 ---
-import { data } from "@data";
-import Badge from "@ui/badge.astro";
-import CardContent from "@ui/card/card-content.astro";
-import CardHeader from "@ui/card/card-header.astro";
-import CardTitle from "@ui/card/card-title.astro";
-import Card from "@ui/card/card.astro";
+import { data } from '@data'
+import Badge from '@ui/badge.astro'
+import CardContent from '@ui/card/card-content.astro'
+import CardHeader from '@ui/card/card-header.astro'
+import CardTitle from '@ui/card/card-title.astro'
+import Card from '@ui/card/card.astro'
 ---
 
-<Card className="mt-6">
+<Card className='mt-6'>
   <CardHeader>
     <CardTitle>Skills</CardTitle>
   </CardHeader>
   <CardContent>
-    <div class="flex flex-wrap gap-2">
+    <div class='flex flex-wrap gap-2'>
       {
         data.skills.map(({ name, color }, i) => (
           <Badge
             key={i}
-            variant="secondary"
-            className="dark:text-white/80 dark:border-white/10"
+            variant='secondary'
+            className='dark:text-white/80 dark:border-white/10'
           >
             {name}
           </Badge>

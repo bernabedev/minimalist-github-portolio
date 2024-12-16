@@ -1,11 +1,11 @@
 ---
 export interface CardContentProps {
-  className?: string;
-  [key: string]: any;
+  className?: string
+  [key: string]: any
 }
-const { className, ...props } = Astro.props;
+const { className, ...props } = Astro.props
 ---
 
-<div class:list={["p-6 pt-0", className]} {...props}>
+<div class:list={['p-6 pt-0', className]} {...props}>
   <slot />
 </div>

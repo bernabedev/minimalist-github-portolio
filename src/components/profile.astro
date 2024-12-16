@@ -1,62 +1,62 @@
 ---
-import { data } from "@data";
-import Button from "@ui/button.astro";
-import CardContent from "@ui/card/card-content.astro";
-import Card from "@ui/card/card.astro";
-import { Image } from "astro:assets";
+import { data } from '@data'
+import Button from '@ui/button.astro'
+import CardContent from '@ui/card/card-content.astro'
+import Card from '@ui/card/card.astro'
+import { Image } from 'astro:assets'
 
-const { name, title, description, socials, contact } = data.profile;
+const { name, title, description, socials, contact } = data.profile
 ---
 
 <Card>
-  <CardContent className="pt-6">
-    <div class="flex flex-col items-start gap-2">
+  <CardContent className='pt-6'>
+    <div class='flex flex-col items-start gap-2'>
       <div
-        class="flex flex-row md:flex-col items-center md:items-start w-full gap-4"
+        class='flex w-full flex-row items-center gap-4 md:flex-col md:items-start'
       >
         <Image
           width={150}
           height={150}
           quality={100}
-          src="/avatar.webp"
-          alt="Profile Picture"
-          class="rounded-xl size-12 md:max-w-56 md:w-full h-auto object-cover mx-auto"
+          src='/avatar.webp'
+          alt='Profile Picture'
+          class='mx-auto size-12 h-auto rounded-xl object-cover md:w-full md:max-w-56'
         />
-        <div class="flex flex-col items-start justify-center">
-          <h1 class="font-bold md:mt-4 text-xl md:text-2xl">{name}</h1>
-          <p class="text-sm md:text-base text-blue-500 dark:text-blue-300">
+        <div class='flex flex-col items-start justify-center'>
+          <h1 class='text-xl font-bold md:mt-4 md:text-2xl'>{name}</h1>
+          <p class='text-sm text-blue-500 dark:text-blue-300 md:text-base'>
             {title}
           </p>
         </div>
       </div>
-      <p class="mt-2 text-start text-sm text-muted-foreground">
+      <p class='mt-2 text-start text-sm text-muted-foreground'>
         {description}
       </p>
-      <a target="_blank" href={contact.link} class="font-semibold w-full">
-        <Button className="mt-4 w-full">
+      <a target='_blank' href={contact.link} class='w-full font-semibold'>
+        <Button className='mt-4 w-full'>
           {contact.label}
         </Button>
       </a>
       <div
-        class="mt-4 flex flex-col space-y-2 border-t dark:border-white/10 pt-4 w-full"
+        class='mt-4 flex w-full flex-col space-y-2 border-t pt-4 dark:border-white/10'
       >
         {
           socials.map((s, i) => {
-            const parts = s.link.split("/");
-            const username = parts[parts.length - 1];
+            const parts = s.link.split('/')
+            const username = parts[parts.length - 1]
             return (
               <a
                 href={s.link}
-                target="_blank"
+                target='_blank'
                 aria-label={`${s.name} Logo`}
-                class="cursor-pointer flex items-center gap-2 group"
+                class='group flex cursor-pointer items-center gap-2'
               >
-                {s.icon && <s.icon class="size-4" />}
-                <p class="text-sm text-muted-foreground group-hover:text-primary transition-color duration-200 ease-linear">
+                {s.icon && <s.icon class='size-4' />}
+                <span class='transition-color text-sm text-muted-foreground duration-200 ease-linear group-hover:text-primary dark:group-hover:text-blue-500'>
                   /{username}
-                </p>
+                </span>
               </a>
-            );
+            )
           })
         }
       </div>
