@@ -5,6 +5,10 @@ import Header from '@components/layout/header.astro'
 import Projects from '@components/projects.astro'
 import Sidebar from '@components/sidebar.astro'
 import { data } from '@data'
+
+const { name, title, description } = data.profile
+const SITE = `https://${import.meta.env.HOST ?? 'bernabe.dev'}`
+const ogImage = `${SITE}/og-image.webp`
 ---
 
 <html lang='en'>
@@ -13,12 +17,25 @@ import { data } from '@data'
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>Freilyn Bernabe | Software Engineer</title>
-    <meta name='description' content={data.profile.description} />
+    <title>{name} | {title}</title>
+    <meta name='description' content={description} />
+
+    <!-- Open Graph Tags -->
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={ogImage} />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={SITE} />
+
+    <!-- Twitter Cards (opcional) -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={ogImage} />
   </head>
   <body class='relative min-h-screen text-black dark:text-white'>
     <div
-      class='absolute bottom-0 top-0 z-[-2] min-h-screen w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] dark:bg-[#030712] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] print:hidden'
+      class='absolute bottom-0 top-0 z-[-2] hidden min-h-screen w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] dark:block dark:bg-[#030712] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] print:hidden'
     >
     </div>
     <Header />

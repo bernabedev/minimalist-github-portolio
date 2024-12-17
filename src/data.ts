@@ -109,13 +109,13 @@ export const data = {
     {
       role: 'Senior Developer Web',
       company: 'Minicode SRL',
-      logo: '/companies/minicode.png',
+      logo: '/companies/minicode.svg',
       duration: '2021 - Present',
       description:
         'Lead developer for multiple high-impact projects, mentoring junior developers, and implementing best practices.',
       link: 'https://mincode.com.do',
       images: [],
-      dark: true
+      class: 'p-2'
     },
     // {
     //   role: "Senior Full-Stack Developer",
