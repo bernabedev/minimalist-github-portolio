@@ -10,12 +10,15 @@ const techColors = {
   'Next.js': '#000000',
   NestJS: '#e0234e'
 }
+
+const es = Astro.url.pathname.startsWith('/es')
+const { projects } = es ? data.es : data.en
 ---
 
 <h2 class='mb-4 text-xl font-bold'>Featured Projects</h2>
 <div class='mb-6 grid grid-cols-1 gap-4 md:grid-cols-2'>
   {
-    data.projects.map((p, i) => (
+    projects.map((p, i) => (
       <Card key={i}>
         <CardContent className='pt-6 h-full'>
           <div class='flex h-full flex-col'>

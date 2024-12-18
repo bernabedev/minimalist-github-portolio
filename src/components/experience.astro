@@ -4,6 +4,8 @@ import CalendarDays from '@icons/calendar-days.astro'
 import CardContent from '@ui/card/card-content.astro'
 import Card from '@ui/card/card.astro'
 import { Image } from 'astro:assets'
+const es = Astro.url.pathname.startsWith('/es')
+const { jobs } = es ? data.es : data.en
 ---
 
 <h2 class='mb-4 text-xl font-bold'>Work Experience</h2>
@@ -11,7 +13,7 @@ import { Image } from 'astro:assets'
   <CardContent className='pt-6'>
     <ul class='space-y-8'>
       {
-        data.jobs.map((j) => (
+        jobs.map((j) => (
           <li class='border-b pb-8 last:border-b-0 last:pb-0 dark:border-white/10'>
             {/* Job Details */}
             <div class='flex items-center space-x-4'>

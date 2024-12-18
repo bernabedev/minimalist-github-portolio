@@ -5,6 +5,8 @@ import CardContent from '@ui/card/card-content.astro'
 import CardHeader from '@ui/card/card-header.astro'
 import CardTitle from '@ui/card/card-title.astro'
 import Card from '@ui/card/card.astro'
+const es = Astro.url.pathname.startsWith('/es')
+const { skills } = es ? data.es : data.en
 ---
 
 <Card className='mt-6'>
@@ -14,7 +16,7 @@ import Card from '@ui/card/card.astro'
   <CardContent>
     <div class='flex flex-wrap gap-2'>
       {
-        data.skills.map(({ name, color }, i) => (
+        skills.map(({ name, color }, i) => (
           <Badge
             key={i}
             variant='secondary'
