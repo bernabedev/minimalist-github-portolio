@@ -47,7 +47,7 @@ const { name, title, description, socials, contact } = es
         class='no-print mt-4 flex w-full flex-col space-y-2 border-t pt-4 dark:border-white/10'
       >
         {
-          socials.map((s, i) => {
+          socials.map((s) => {
             const parts = s.link.split('/')
             const username = parts[parts.length - 1]
             return (
