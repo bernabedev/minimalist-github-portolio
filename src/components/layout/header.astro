@@ -29,14 +29,13 @@ const languages = [
     <Printer class='w-5' />
   </button>
   <ThemeToggle />
-  <button aria-label='Languages' class='bg-green-450 group'>
+  <button aria-label='Languages' class='bg-green-450 group relative'>
     <Language
       class='w-5 opacity-80 transition-transform group-hover:scale-125'
     />
-    <div class='absolute right-8 top-0 hidden h-10 w-10 group-hover:block'>
-    </div>
+    <div class='absolute right-0 top-0 hidden h-10 w-6 group-hover:block'></div>
     <div
-      class='scale-80 absolute right-4 top-8 hidden min-w-[6rem] rounded-md border bg-white/90 p-1 text-sm backdrop-blur-md hover:block group-hover:block dark:border-black/80 dark:bg-black/70'
+      class='scale-80 absolute right-0 top-8 hidden min-w-[6rem] rounded-md border bg-white/90 p-1 text-sm backdrop-blur-md hover:block group-hover:block dark:border-black/80 dark:bg-black/70'
     >
       <ul class='flex flex-col gap-1'>
         {
