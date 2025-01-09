@@ -1,47 +1,108 @@
-# Astro Starter Kit: Minimal
+# Minimalist GitHub Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
+![Preview Image](https://bernabe.dev/preview.png)
+
+**Live Demo**: [bernabe.dev](https://bernabe.dev)
+
+## Overview
+
+This is a minimalist portfolio template built using [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/), and [TypeScript](https://www.typescriptlang.org/). It is designed to be clean, fast, and easily customizable for showcasing personal or professional work.
+
+---
+
+## Features
+
+- **Fast and Lightweight:** Powered by Astro, delivering a seamless experience.
+- **Responsive Design:** Optimized for all devices.
+- **Customizable:** Modular components for easy personalization.
+- **SEO-Friendly:** Built-in sitemap and metadata support.
+- **Dark Mode:** Fully supports dark mode for an elegant look.
+- **Multilingual Support:** Designed to easily add language options.
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js (version 18 or higher)
+- npm or yarn
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bernabedev/minimalist-github-portfolio.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd minimalist-github-portfolio
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running Locally
+Start the development server:
+```bash
+npm run dev
 ```
+Open your browser at [http://localhost:4321](http://localhost:4321) to see your portfolio in action.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Deployment
 
-## 🚀 Project Structure
+Easily deploy this project on [Vercel](https://vercel.com):
+1. Create a Vercel account.
+2. Import this repository.
+3. Set up your environment variables (if needed).
+4. Deploy with a single click.
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
+## Folder Structure
+```
 /
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+├── public/         # Static assets
+├── src/            # Main source code
+│   ├── components/ # Reusable components
+│   ├── layouts/    # Layout templates
+│   └── pages/      # Page routes
+├── .gitignore      # Git ignore file
+├── README.md       # Project documentation
+├── package.json    # Node dependencies
+└── tailwind.config.mjs  # Tailwind configuration
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Changing Content
+- Edit text and media in the `/src/pages` and `/src/components` directories.
+- Update your logo or images in the `public/` folder.
 
-Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+### Adjusting Styles
+Customize the design by modifying the `tailwind.config.mjs` file.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Contributing
+Contributions are welcome! Feel free to fork this repository, create a new branch, and submit a pull request.
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Acknowledgements
+
+- [Astro](https://astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+**Crafted with care by [bernabe.dev](https://bernabe.dev).**
+
