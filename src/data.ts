@@ -17,7 +17,7 @@ export const data = {
       socials: [
         {
           name: 'Github',
-          link: 'https://github.com/freidev',
+          link: 'https://github.com/bernabedev',
           icon: GithubIcon
         },
         {
@@ -153,7 +153,7 @@ export const data = {
       socials: [
         {
           name: 'Github',
-          link: 'https://github.com/freidev',
+          link: 'https://github.com/bernabedev',
           icon: GithubIcon
         },
         {
