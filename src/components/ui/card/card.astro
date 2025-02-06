@@ -1,16 +1,11 @@
 ---
-export interface Props {
-  className?: string
-  [key: string]: any
-}
-
-const { className, ...props } = Astro.props
+const { ...props } = Astro.props
 ---
 
 <div
   class:list={[
-    'bg-card text-card-foreground rounded-lg border border-dashed shadow-sm dark:border-white/10 print:border-2 print:shadow-none',
-    className
+    'text-card-foreground rounded-lg border border-[#a7a7a71a]/10 bg-[#fbfcff] dark:border-black dark:bg-primary/40 print:border-2 print:shadow-none',
+    props.class
   ]}
   {...props}
 >

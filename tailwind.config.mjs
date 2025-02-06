@@ -72,7 +72,8 @@ export default {
     borderColor: {
       DEFAULT: '#ddd',
       white: '#fff',
-      black: '#000'
+      black: '#000',
+      blue: '#696ef7'
     }
   },
   plugins: []

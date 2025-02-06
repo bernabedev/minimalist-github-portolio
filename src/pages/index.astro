@@ -5,6 +5,7 @@ import Header from '@components/layout/header.astro'
 import Projects from '@components/projects.astro'
 import Sidebar from '@components/sidebar.astro'
 import { data } from '@data'
+import { ClientRouter } from 'astro:transitions'
 
 const { name, title, description } = data.en.profile
 const SITE = `https://${import.meta.env.HOST ?? 'bernabe.dev'}`
@@ -32,6 +33,8 @@ const ogImage = `${SITE}/og-image.webp`
     <meta name='twitter:title' content={title} />
     <meta name='twitter:description' content={description} />
     <meta name='twitter:image' content={ogImage} />
+
+    <ClientRouter />
 
     <script
       is:inline
