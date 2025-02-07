@@ -1,0 +1,129 @@
+---
+import Card from './ui/card/card.astro'
+const GITHUB_USER = 'bernabedev'
+const API_URL = `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`
+
+const COLOR_MAP = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
+
+let contributions = []
+let total = 0
+
+let lastMonth = null
+let monthMarkers = []
+
+try {
+  const { contributions: _contributions, total: _total } = await fetch(
+    API_URL
+  ).then((res) => res.json())
+  contributions = _contributions
+  total = _total.lastYear
+
+  for (let i = 0; i < contributions.length; i++) {
+    const day = contributions[i]
+
+    const date = new Date(day.date)
+    const month = date.toLocaleString('default', { month: 'short' })
+
+    if (
+      lastMonth !== month &&
+      monthMarkers.findIndex((m) => m.month === month) === -1
+    ) {
+      monthMarkers.push({ month, index: i })
+      lastMonth = month
+    }
+  }
+} catch (error) {
+  console.error(error)
+}
+---
+
+<div>
+  <h2 class='mb-4 text-xl font-bold'>GitHub Contributions</h2>
+  <Card class='border-black bg-[#040023] p-6 text-white'>
+    <a href={`https://github.com/${GITHUB_USER}`} class='hover:underline'
+      >@{GITHUB_USER} on GitHub</a
+    >
+    <div class='months mt-4'>
+      {monthMarkers.map((m) => <span>{m.month}</span>)}
+    </div>
+    <div class='calendar'>
+      {
+        contributions.map(
+          (c: { date: string; count: number; level: number }) => (
+            <div
+              class='aspect-square rounded-[2px]'
+              style={`background-color: ${COLOR_MAP[c.level]}`}
+              title={`${c.date}: ${c.count} contributions`}
+            />
+          )
+        )
+      }
+    </div>
+    <div class='mt-4 flex'>
+      <div>
+        <span id='total-contributions'>{total}</span> contributions in the last year
+      </div>
+      <div class='ml-auto flex items-center gap-2 text-xs'>
+        <span style='margin-right: 0.4em;'>Less</span><svg
+          width='12'
+          height='12'
+          ><rect
+            width='12'
+            height='12'
+            fill='#161b22'
+            rx='2'
+            ry='2'
+            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
+        ><svg width='12' height='12'
+          ><rect
+            width='12'
+            height='12'
+            fill='#0e4429'
+            rx='2'
+            ry='2'
+            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
+        ><svg width='12' height='12'
+          ><rect
+            width='12'
+            height='12'
+            fill='#006d32'
+            rx='2'
+            ry='2'
+            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
+        ><svg width='12' height='12'
+          ><rect
+            width='12'
+            height='12'
+            fill='#26a641'
+            rx='2'
+            ry='2'
+            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
+        ><svg width='12' height='12'
+          ><rect
+            width='12'
+            height='12'
+            fill='#39d353'
+            rx='2'
+            ry='2'
+            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
+        ><span style='margin-left: 0.4em;'>More</span>
+      </div>
+    </div>
+  </Card>
+</div>
+
+<style>
+  .months {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    font-size: 12px;
+    color: #8b949e;
+  }
+
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(53, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 2px;
+  }
+</style>

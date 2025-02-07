@@ -18,7 +18,7 @@ const { projects } = es ? data.es : data.en
 <h2 class='mb-4 text-xl font-bold'>Featured Projects</h2>
 <div class='mb-6 grid grid-cols-1 gap-4 md:grid-cols-2'>
   {
-    projects.map((p, i) => (
+    projects.map((p) => (
       <a href={p.link} target='_blank' class='group'>
         <Card class='transition group-hover:border-dashed group-hover:border-black/40 dark:group-hover:border-blue/30'>
           <CardContent className='pt-6 h-full'>
