@@ -137,7 +137,15 @@ export const data = {
         link: '',
         images: []
       }
-    ]
+    ],
+    githubStats: {
+      title: 'GitHub Contributions',
+      githubUser: 'bernabedev',
+      onGithub: 'On GitHub',
+      contributionDesc: 'contributions in the last year',
+      less: 'Less',
+      more: 'More'
+    }
   },
   es: {
     profile: {
@@ -273,6 +281,14 @@ export const data = {
         link: '',
         images: []
       }
-    ]
+    ],
+    githubStats: {
+      title: 'Contribuciones en GitHub',
+      githubUser: 'bernabedev',
+      onGithub: 'En GitHub',
+      contributionDesc: 'contribuciones en el ultimo año',
+      less: 'Menos',
+      more: 'Más'
+    }
   }
 }

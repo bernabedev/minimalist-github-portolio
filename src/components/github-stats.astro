@@ -1,6 +1,11 @@
 ---
+import { data } from '@data'
 import Card from './ui/card/card.astro'
-const GITHUB_USER = 'bernabedev'
+
+const es = Astro.url.pathname.startsWith('/es')
+const { githubStats } = es ? data.es : data.en
+
+const GITHUB_USER = githubStats.githubUser
 const API_URL = `https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`
 
 const COLOR_MAP = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
@@ -22,7 +27,9 @@ try {
     const day = contributions[i]
 
     const date = new Date(day.date)
-    const month = date.toLocaleString('default', { month: 'short' })
+    const month = date.toLocaleString(es ? 'es-ES' : 'en-US', {
+      month: 'short'
+    })
 
     if (
       lastMonth !== month &&
@@ -38,10 +45,10 @@ try {
 ---
 
 <div>
-  <h2 class='mb-4 text-xl font-bold'>GitHub Contributions</h2>
+  <h2 class='mb-4 text-xl font-bold'>{githubStats.title}</h2>
   <Card class='border-black bg-[#040023] p-6 text-white'>
     <a href={`https://github.com/${GITHUB_USER}`} class='hover:underline'
-      >@{GITHUB_USER} on GitHub</a
+      >@{GITHUB_USER} {githubStats.onGithub}</a
     >
     <div class='months mt-4'>
       {monthMarkers.map((m) => <span>{m.month}</span>)}
@@ -61,10 +68,11 @@ try {
     </div>
     <div class='mt-4 flex'>
       <p class='text-sm md:text-base'>
-        <span>{total}</span> contributions in the last year
+        <span>{total}</span>
+        {githubStats.contributionDesc}
       </p>
       <div class='ml-auto flex items-center gap-1 text-xs md:gap-2'>
-        <span class='mr-2'>Less</span>
+        <span class='mr-2'>{githubStats.less}</span>
         {
           COLOR_MAP.map((c) => (
             <svg class='h-2 w-2 md:h-3 md:w-3'>
@@ -78,7 +86,7 @@ try {
             </svg>
           ))
         }
-        <span class='ml-2'>More</span>
+        <span class='ml-2'>{githubStats.more}</span>
       </div>
     </div>
   </Card>
