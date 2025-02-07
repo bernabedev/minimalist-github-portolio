@@ -51,7 +51,7 @@ try {
         contributions.map(
           (c: { date: string; count: number; level: number }) => (
             <div
-              class='aspect-square rounded-[2px]'
+              class='aspect-square rounded-[1.5px] md:rounded-[2px]'
               style={`background-color: ${COLOR_MAP[c.level]}`}
               title={`${c.date}: ${c.count} contributions`}
             />
@@ -60,53 +60,25 @@ try {
       }
     </div>
     <div class='mt-4 flex'>
-      <div>
-        <span id='total-contributions'>{total}</span> contributions in the last year
-      </div>
-      <div class='ml-auto flex items-center gap-2 text-xs'>
-        <span style='margin-right: 0.4em;'>Less</span><svg
-          width='12'
-          height='12'
-          ><rect
-            width='12'
-            height='12'
-            fill='#161b22'
-            rx='2'
-            ry='2'
-            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
-        ><svg width='12' height='12'
-          ><rect
-            width='12'
-            height='12'
-            fill='#0e4429'
-            rx='2'
-            ry='2'
-            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
-        ><svg width='12' height='12'
-          ><rect
-            width='12'
-            height='12'
-            fill='#006d32'
-            rx='2'
-            ry='2'
-            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
-        ><svg width='12' height='12'
-          ><rect
-            width='12'
-            height='12'
-            fill='#26a641'
-            rx='2'
-            ry='2'
-            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
-        ><svg width='12' height='12'
-          ><rect
-            width='12'
-            height='12'
-            fill='#39d353'
-            rx='2'
-            ry='2'
-            style='stroke: rgba(255, 255, 255, 0.04);'></rect></svg
-        ><span style='margin-left: 0.4em;'>More</span>
+      <p class='text-sm md:text-base'>
+        <span>{total}</span> contributions in the last year
+      </p>
+      <div class='ml-auto flex items-center gap-1 text-xs md:gap-2'>
+        <span class='mr-2'>Less</span>
+        {
+          COLOR_MAP.map((c) => (
+            <svg class='h-2 w-2 md:h-3 md:w-3'>
+              <rect
+                class='h-2 w-2 md:h-3 md:w-3'
+                fill={c}
+                rx='2'
+                ry='2'
+                style='stroke: rgba(255, 255, 255, 0.04);'
+              />
+            </svg>
+          ))
+        }
+        <span class='ml-2'>More</span>
       </div>
     </div>
   </Card>
