@@ -46,7 +46,7 @@ try {
 
 <div>
   <h2 class='mb-4 text-xl font-bold'>{githubStats.title}</h2>
-  <Card class='border-black bg-[#040023] p-6 text-white'>
+  <Card class='border-black !bg-[#040023] p-6 text-white dark:!bg-primary/40'>
     <a href={`https://github.com/${GITHUB_USER}`} class='hover:underline'
       >@{GITHUB_USER} {githubStats.onGithub}</a
     >
@@ -59,7 +59,7 @@ try {
           (c: { date: string; count: number; level: number }) => (
             <div
               class='aspect-square rounded-[1.5px] md:rounded-[2px]'
-              style={`background-color: ${COLOR_MAP[c.level]}`}
+              style={`background-color: ${COLOR_MAP[c.level]}; border: 1px solid #19232f;`}
               title={`${c.date}: ${c.count} contributions`}
             />
           )
