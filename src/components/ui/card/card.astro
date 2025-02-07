@@ -4,7 +4,7 @@ const { ...props } = Astro.props
 
 <div
   class:list={[
-    'text-card-foreground rounded-lg border border-[#a7a7a71a]/10 bg-[#fbfcff] dark:border-black dark:bg-primary/40 print:border-2 print:shadow-none',
+    'text-card-foreground rounded-lg border border-[#a7a7a71a]/10 bg-[#fbfcff] dark:border-black dark:bg-primary/40 print:border-2 print:!border-[#a7a7a71a]/10 print:shadow-none',
     props.class
   ]}
   {...props}
