@@ -22,7 +22,7 @@ export const data = {
         },
         {
           name: 'LinkedIn',
-          link: 'https://linkedin.com/in/freilyn-bernabe',
+          link: 'https://linkedin.com/in/bernabedev',
           icon: LinkedinIcon
         },
         {
@@ -166,7 +166,7 @@ export const data = {
         },
         {
           name: 'LinkedIn',
-          link: 'https://linkedin.com/in/freilyn-bernabe',
+          link: 'https://linkedin.com/in/bernabedev',
           icon: LinkedinIcon
         },
         {
@@ -179,7 +179,7 @@ export const data = {
     skills: [
       {
         name: 'Node.js',
-        color: '417e38'
+        color: '417e38',
       },
       {
         name: 'Express.js',
