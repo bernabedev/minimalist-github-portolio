@@ -16,12 +16,13 @@ const { skills } = es ? data.es : data.en
   <CardContent>
     <div class='flex flex-wrap gap-2'>
       {
-        skills.map(({ name }, i) => (
+        skills.map(({ name, icon }, i) => (
           <Badge
             key={i}
             variant='secondary'
-            className='dark:text-white/80 dark:border-white/10'
+            className='dark:text-white/80 dark:border-white/15 flex gap-1 items-center'
           >
+            {icon && <img src={`/skills/${icon}`} class='h-3' />}
             {name}
           </Badge>
         ))

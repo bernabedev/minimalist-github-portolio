@@ -35,39 +35,53 @@ export const data = {
     skills: [
       {
         name: 'Node.js',
-        color: '417e38'
+        color: '417e38',
+        icon: 'nodejs.svg'
       },
       {
         name: 'Express.js',
-        color: '000000'
+        color: '000000',
+        icon: 'expressjs.svg'
       },
       {
         name: 'Nest.js',
-        color: 'ea2845'
+        color: 'ea2845',
+        icon: 'nestjs.svg'
       },
       {
         name: 'React',
-        color: '60c7de'
+        color: '60c7de',
+        icon: 'react.svg'
       },
       {
         name: 'Next.js',
-        color: '000000'
+        color: '000000',
+        icon: 'nextjs.svg'
       },
       {
         name: 'Astro',
-        color: 'ff5d00'
+        color: 'ff5d00',
+        icon: 'astro.svg'
       },
       {
         name: 'Tailwind CSS',
-        color: '0ea5e9'
+        color: '0ea5e9',
+        icon: 'tailwindcss.svg'
       },
       {
         name: 'TypeScript',
-        color: '#3178c6'
+        color: '#3178c6',
+        icon: 'typescript.svg'
       },
       {
         name: 'JavaScript',
-        color: 'f0dc4e'
+        color: 'f0dc4e',
+        icon: 'javascript.svg'
+      },
+      {
+        name: 'Bun',
+        color: '000000',
+        icon: 'bun.svg'
       }
     ],
     aboutMe: {
@@ -180,38 +194,52 @@ export const data = {
       {
         name: 'Node.js',
         color: '417e38',
+        icon: 'nodejs.svg'
       },
       {
         name: 'Express.js',
-        color: '000000'
+        color: '000000',
+        icon: 'expressjs.svg'
       },
       {
         name: 'Nest.js',
-        color: 'ea2845'
+        color: 'ea2845',
+        icon: 'nestjs.svg'
       },
       {
         name: 'React',
-        color: '60c7de'
+        color: '60c7de',
+        icon: 'react.svg'
       },
       {
         name: 'Next.js',
-        color: '000000'
+        color: '000000',
+        icon: 'nextjs.svg'
       },
       {
         name: 'Astro',
-        color: 'ff5d00'
+        color: 'ff5d00',
+        icon: 'astro.svg'
       },
       {
         name: 'Tailwind CSS',
-        color: '0ea5e9'
+        color: '0ea5e9',
+        icon: 'tailwindcss.svg'
       },
       {
         name: 'TypeScript',
-        color: '#3178c6'
+        color: '#3178c6',
+        icon: 'typescript.svg'
       },
       {
         name: 'JavaScript',
-        color: 'f0dc4e'
+        color: 'f0dc4e',
+        icon: 'javascript.svg'
+      },
+      {
+        name: 'Bun',
+        color: '000000',
+        icon: 'bun.svg'
       }
     ],
     aboutMe: {
