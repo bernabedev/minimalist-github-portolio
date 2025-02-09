@@ -82,6 +82,11 @@ export const data = {
         name: 'Bun',
         color: '000000',
         icon: 'bun.svg'
+      },
+      {
+        name: 'Vue.js',
+        color: '42b883',
+        icon: 'vuejs.svg'
       }
     ],
     aboutMe: {
@@ -240,6 +245,11 @@ export const data = {
         name: 'Bun',
         color: '000000',
         icon: 'bun.svg'
+      },
+      {
+        name: 'Vue.js',
+        color: '42b883',
+        icon: 'vuejs.svg'
       }
     ],
     aboutMe: {
