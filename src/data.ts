@@ -9,7 +9,7 @@ export const data = {
       title: 'Software Engineer',
       description:
         'I am a software engineer with a passion for building scalable and efficient web applications.',
-      location: 'Bengaluru, India',
+      location: 'Santiago, Dominican Republic',
       contact: {
         link: 'https://cal.com/freilyn-bernabe-aooipq/15min',
         label: 'Contact Me'
@@ -32,63 +32,6 @@ export const data = {
         }
       ]
     },
-    skills: [
-      {
-        name: 'Node.js',
-        color: '417e38',
-        icon: 'nodejs.svg'
-      },
-      {
-        name: 'Express.js',
-        color: '000000',
-        icon: 'expressjs.svg'
-      },
-      {
-        name: 'Nest.js',
-        color: 'ea2845',
-        icon: 'nestjs.svg'
-      },
-      {
-        name: 'React',
-        color: '60c7de',
-        icon: 'react.svg'
-      },
-      {
-        name: 'Next.js',
-        color: '000000',
-        icon: 'nextjs.svg'
-      },
-      {
-        name: 'Astro',
-        color: 'ff5d00',
-        icon: 'astro.svg'
-      },
-      {
-        name: 'Tailwind CSS',
-        color: '0ea5e9',
-        icon: 'tailwindcss.svg'
-      },
-      {
-        name: 'TypeScript',
-        color: '#3178c6',
-        icon: 'typescript.svg'
-      },
-      {
-        name: 'JavaScript',
-        color: 'f0dc4e',
-        icon: 'javascript.svg'
-      },
-      {
-        name: 'Bun',
-        color: '000000',
-        icon: 'bun.svg'
-      },
-      {
-        name: 'Vue.js',
-        color: '42b883',
-        icon: 'vuejs.svg'
-      }
-    ],
     aboutMe: {
       title: 'About Me',
       description:
@@ -172,7 +115,7 @@ export const data = {
       title: 'Ingeniero de Software',
       description:
         'Soy un ingeniero de software con pasión por construir aplicaciones web escalables y eficientes.',
-      location: 'Bengaluru, India',
+      location: 'Santiago, República Dominicana',
       contact: {
         link: 'https://cal.com/freilyn-bernabe-aooipq/15min',
         label: 'Contáctame'
@@ -195,63 +138,7 @@ export const data = {
         }
       ]
     },
-    skills: [
-      {
-        name: 'Node.js',
-        color: '417e38',
-        icon: 'nodejs.svg'
-      },
-      {
-        name: 'Express.js',
-        color: '000000',
-        icon: 'expressjs.svg'
-      },
-      {
-        name: 'Nest.js',
-        color: 'ea2845',
-        icon: 'nestjs.svg'
-      },
-      {
-        name: 'React',
-        color: '60c7de',
-        icon: 'react.svg'
-      },
-      {
-        name: 'Next.js',
-        color: '000000',
-        icon: 'nextjs.svg'
-      },
-      {
-        name: 'Astro',
-        color: 'ff5d00',
-        icon: 'astro.svg'
-      },
-      {
-        name: 'Tailwind CSS',
-        color: '0ea5e9',
-        icon: 'tailwindcss.svg'
-      },
-      {
-        name: 'TypeScript',
-        color: '#3178c6',
-        icon: 'typescript.svg'
-      },
-      {
-        name: 'JavaScript',
-        color: 'f0dc4e',
-        icon: 'javascript.svg'
-      },
-      {
-        name: 'Bun',
-        color: '000000',
-        icon: 'bun.svg'
-      },
-      {
-        name: 'Vue.js',
-        color: '42b883',
-        icon: 'vuejs.svg'
-      }
-    ],
+
     aboutMe: {
       title: 'Sobre Mí',
       description:
@@ -328,5 +215,62 @@ export const data = {
       less: 'Menos',
       more: 'Más'
     }
-  }
+  },
+  skills: [
+    {
+      name: 'Node.js',
+      color: '417e38',
+      icon: 'nodejs.svg'
+    },
+    {
+      name: 'Express.js',
+      color: '000000',
+      icon: 'expressjs.svg'
+    },
+    {
+      name: 'Nest.js',
+      color: 'ea2845',
+      icon: 'nestjs.svg'
+    },
+    {
+      name: 'React',
+      color: '60c7de',
+      icon: 'react.svg'
+    },
+    {
+      name: 'Next.js',
+      color: '000000',
+      icon: 'nextjs.svg'
+    },
+    {
+      name: 'Astro',
+      color: 'ff5d00',
+      icon: 'astro.svg'
+    },
+    {
+      name: 'Tailwind CSS',
+      color: '0ea5e9',
+      icon: 'tailwindcss.svg'
+    },
+    {
+      name: 'TypeScript',
+      color: '#3178c6',
+      icon: 'typescript.svg'
+    },
+    {
+      name: 'JavaScript',
+      color: 'f0dc4e',
+      icon: 'javascript.svg'
+    },
+    {
+      name: 'Bun',
+      color: '000000',
+      icon: 'bun.svg'
+    },
+    {
+      name: 'Vue.js',
+      color: '42b883',
+      icon: 'vuejs.svg'
+    }
+  ]
 }

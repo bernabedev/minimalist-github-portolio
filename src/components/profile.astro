@@ -1,11 +1,12 @@
 ---
 import { data } from '@data'
+import Pin from '@icons/pin.astro'
 import Button from '@ui/button.astro'
 import CardContent from '@ui/card/card-content.astro'
 import Card from '@ui/card/card.astro'
 import { Image } from 'astro:assets'
 const es = Astro.url.pathname.startsWith('/es')
-const { name, title, description, socials, contact } = es
+const { name, title, description, socials, contact, location } = es
   ? data.es.profile
   : data.en.profile
 ---
@@ -43,8 +44,12 @@ const { name, title, description, socials, contact } = es
           {contact.label}
         </Button>
       </a>
+      <div class='mt-4 flex items-center gap-2 text-muted-foreground'>
+        <Pin class='h-4 w-4' />
+        <span class='text-sm'>{location}</span>
+      </div>
       <div
-        class='no-print mt-4 flex w-full flex-col space-y-2 border-t pt-4 dark:border-white/10'
+        class='no-print mt-2 flex w-full flex-col space-y-2 border-t pt-4 dark:border-white/10'
       >
         {
           socials.map((s) => {
