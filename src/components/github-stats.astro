@@ -47,9 +47,14 @@ try {
 <div>
   <h2 class='mb-4 text-xl font-bold'>{githubStats.title}</h2>
   <Card class='border-black !bg-[#040023] p-6 text-white dark:!bg-primary/40'>
-    <a href={`https://github.com/${GITHUB_USER}`} class='hover:underline'
-      >@{GITHUB_USER} {githubStats.onGithub}</a
+    <a
+      href={`https://github.com/${GITHUB_USER}`}
+      class='hover:underline'
+      target='_blank'
+      rel='noopener noreferrer'
     >
+      @{GITHUB_USER}
+    </a>
     <div class='months mt-4'>
       {monthMarkers.map((m) => <span>{m.month}</span>)}
     </div>
