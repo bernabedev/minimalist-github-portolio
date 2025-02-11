@@ -1,5 +1,6 @@
 ---
 import AboutMe from '@components/about-me.astro'
+import ChatBot from '@components/chat-bot.astro'
 import Experience from '@components/experience.astro'
 import GithubStats from '@components/github-stats.astro'
 import Header from '@components/layout/header.astro'
@@ -66,6 +67,7 @@ const ogImage = `${SITE}/og-image.webp`
         </main>
       </div>
     </div>
+    <ChatBot client:load />
   </body>
 </html>
 

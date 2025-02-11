@@ -2,4 +2,5 @@
 
 interface ImportMetaEnv {
   readonly HOST?: string
+  readonly PUBLIC_VITE_GEMINI_API_KEY?: string
 }
