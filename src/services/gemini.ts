@@ -20,6 +20,7 @@ Profile:
 - GitHub: [${'bernabedev'}](${'https://github.com/bernabedev'})
 - LinkedIn: [${'bernabedev'}](${'https://linkedin.com/in/bernabedev'})
 - Twitter: [${'bernabedev'}](${'https://x.com/bernabedev'})
+- EMAIL [${'freilyn@bernabe.dev'}](${'mailto:freilyn@bernabe.dev'})
 
 Projects:
 1. **Marketplace Store Web** (Next.js) - [Link](https://www.bernalux.com)
