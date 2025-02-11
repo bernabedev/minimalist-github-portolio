@@ -107,6 +107,12 @@ export const data = {
       contributionDesc: 'contributions in the last year',
       less: 'Less',
       more: 'More'
+    },
+    chatBot: {
+      title: 'Chat with Freilyn',
+      placeholder: 'Ask me anything',
+      btnClear: 'Clear',
+      inputPlaceholder: 'Ask a question...'
     }
   },
   es: {
@@ -138,7 +144,6 @@ export const data = {
         }
       ]
     },
-
     aboutMe: {
       title: 'Sobre Mí',
       description:
@@ -214,6 +219,12 @@ export const data = {
       contributionDesc: 'contribuciones en el ultimo año',
       less: 'Menos',
       more: 'Más'
+    },
+    chatBot: {
+      title: 'Chatea con Freilyn',
+      placeholder: 'Preguntame cualquier cosa',
+      btnClear: 'Limpiar',
+      inputPlaceholder: 'Pregunta una pregunta...'
     }
   },
   skills: [

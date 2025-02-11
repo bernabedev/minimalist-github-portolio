@@ -1,5 +1,11 @@
 ---
+import { data } from '@data'
 import Card from './ui/card/card.astro'
+const es = Astro.url.pathname.startsWith('/es')
+
+const {
+  chatBot: { title, btnClear, placeholder, inputPlaceholder }
+} = es ? data.es : data.en
 ---
 
 <div>
@@ -36,12 +42,12 @@ import Card from './ui/card/card.astro'
     ]}
   >
     <div class='flex items-center gap-2 bg-muted-foreground/5 px-6 py-4'>
-      <h1 class='font-semibold'>Chat Assistant</h1>
+      <h1 class='font-semibold'>{title}</h1>
       <button
         id='chat-clear-btn'
         class='ml-auto rounded-md px-4 py-1 hover:bg-primary/10'
       >
-        Clear
+        {btnClear}
       </button>
       <button class='p-1' id='chat-close-btn'>
         <svg
@@ -61,7 +67,7 @@ import Card from './ui/card/card.astro'
     </div>
     <div id='chat-placeholder' class='flex flex-1 items-center justify-center'>
       <div class='rounded-md bg-muted-foreground/5 p-4'>
-        Chat with the AI assistant
+        {placeholder}
       </div>
     </div>
     <div
@@ -73,7 +79,7 @@ import Card from './ui/card/card.astro'
       <div class='relative'>
         <input
           class='min-h-12 w-full rounded-full border bg-[transparent] pe-12 pl-4 dark:border-white/10'
-          placeholder='Ask a question...'
+          placeholder={inputPlaceholder}
         />
         <button
           id='chat-send-btn'
