@@ -113,6 +113,11 @@ export const data = {
       placeholder: 'Ask me anything',
       btnClear: 'Clear',
       inputPlaceholder: 'Ask a question...'
+    },
+    footer: {
+      powered: 'Built with',
+      by: 'by',
+      githubBtn: 'View on GitHub'
     }
   },
   es: {
@@ -225,6 +230,11 @@ export const data = {
       placeholder: 'Preguntame cualquier cosa',
       btnClear: 'Limpiar',
       inputPlaceholder: 'Pregunta una pregunta...'
+    },
+    footer: {
+      powered: 'Hecho con',
+      by: 'por',
+      githubBtn: 'Ver en GitHub'
     }
   },
   skills: [
