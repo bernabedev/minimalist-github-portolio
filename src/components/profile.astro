@@ -1,12 +1,13 @@
 ---
 import { data } from '@data'
 import Pin from '@icons/pin.astro'
+import EmailIcon from '@icons/socials/email-icon.astro'
 import Button from '@ui/button.astro'
 import CardContent from '@ui/card/card-content.astro'
 import Card from '@ui/card/card.astro'
 import { Image } from 'astro:assets'
 const es = Astro.url.pathname.startsWith('/es')
-const { name, title, description, socials, contact, location } = es
+const { name, title, description, socials, contact, location, email } = es
   ? data.es.profile
   : data.en.profile
 ---
@@ -69,6 +70,19 @@ const { name, title, description, socials, contact, location } = es
               </a>
             )
           })
+        }
+        {
+          email && (
+            <a
+              href={`mailto:${email}?subject=Hola,%20${name}!%20Me%20interesa%20conocerte`}
+              class='group flex items-center gap-2'
+            >
+              <EmailIcon class='size-4' />
+              <span class='transition-color text-sm text-muted-foreground duration-200 ease-linear group-hover:text-primary dark:group-hover:text-blue-500'>
+                {email}
+              </span>
+            </a>
+          )
         }
       </div>
     </div>

@@ -14,6 +14,7 @@ export const data = {
         link: 'https://cal.com/freilyn-bernabe-aooipq/15min',
         label: 'Contact Me'
       },
+      email: 'freilyn@bernabe.dev',
       socials: [
         {
           name: 'Github',
@@ -131,6 +132,7 @@ export const data = {
         link: 'https://cal.com/freilyn-bernabe-aooipq/15min',
         label: 'Contáctame'
       },
+      email: 'freilyn@bernabe.dev',
       socials: [
         {
           name: 'Github',
