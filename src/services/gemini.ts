@@ -121,10 +121,9 @@ function createBotMessage(): HTMLElement {
     'self-start',
     'text-black',
     'text-sm',
-    'dark:bg-white',
+    'dark:bg-white/10',
     'bg-primary',
     'self-start',
-    'dark:text-black',
     'text-white'
   )
 
