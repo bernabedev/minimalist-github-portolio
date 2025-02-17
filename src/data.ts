@@ -36,7 +36,7 @@ export const data = {
     aboutMe: {
       title: 'About Me',
       description:
-        'I am a software engineer with a passion for building scalable and efficient web applications.'
+        "I love turning ideas into powerful, scalable web applications. As a Software Engineer, I work with Next.js, NestJS, Vue.js, and Astro to create seamless, high-performing user experiences. 🚀 Let's build something amazing together!"
     },
     projects: [
       {
@@ -154,7 +154,7 @@ export const data = {
     aboutMe: {
       title: 'Sobre Mí',
       description:
-        'Soy un ingeniero de software con pasión por construir aplicaciones web escalables y eficientes.'
+        'Me encanta convertir ideas en aplicaciones web potentes y escalables. Como Ingeniero de Software, trabajo con Next.js, NestJS, Vue.js y Astro para crear experiencias de usuario fluidas y de alto rendimiento. 🚀 ¡Construyamos algo increíble juntos!'
     },
     projects: [
       {
