@@ -1,4 +1,9 @@
-let messages: { role: 'user' | 'model'; content: string }[] = []
+import type { ChatBotMessage } from 'src/definitions'
+
+export const messages: ChatBotMessage[] = []
+
+// Constants
+export const LOCAL_STORAGE_KEY = 'gemini-messages'
 
 // Get DOM elements
 const $input = document.querySelector('input') as HTMLInputElement | null
@@ -42,7 +47,8 @@ export async function streamGeminiResponse(prompt: string): Promise<void> {
       scrollToBottom()
     }
 
-    messages.push({ role: 'model', content: botResponse })
+    messages.push({ role: 'bot', content: botResponse })
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(messages))
   } catch (error) {
     console.error('Error en la API de chat:', error)
   } finally {

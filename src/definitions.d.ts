@@ -1,4 +1,4 @@
 export interface ChatBotMessage {
-  role: 'user' | 'system'
+  role: 'user' | 'system' | 'bot'
   content: string
 }

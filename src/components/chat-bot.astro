@@ -108,10 +108,11 @@ const {
 </div>
 
 <script>
-  import type { ChatBotMessage } from 'src/definitions'
-  import { streamGeminiResponse } from 'src/services/gemini'
-
-  const messages: ChatBotMessage[] = []
+  import {
+    LOCAL_STORAGE_KEY,
+    messages,
+    streamGeminiResponse
+  } from 'src/services/gemini'
 
   const $openBtn = document.getElementById('open-chat-btn')
   const $card = document.getElementById('chat-bot')
@@ -134,6 +135,7 @@ const {
 
   $clearBtn?.addEventListener('click', () => {
     messages.length = 0
+    localStorage.removeItem(LOCAL_STORAGE_KEY)
     initializeMessages()
   })
 
@@ -178,6 +180,8 @@ const {
         $messages.scrollTop = $messages.scrollHeight
       }, 50) // Small delay to ensure UI updates first
     }
+
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(messages))
   }
 
   $sendBtn?.addEventListener('click', () => {
@@ -199,6 +203,11 @@ const {
   })
 
   function initializeMessages() {
+    const storedMessages = localStorage.getItem(LOCAL_STORAGE_KEY)
+    if (storedMessages) {
+      messages.push(...JSON.parse(storedMessages))
+    }
+
     if (messages.length === 0) {
       $messages?.querySelector('ul')?.remove()
       $messages?.classList.add('hidden')
