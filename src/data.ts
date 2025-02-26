@@ -200,6 +200,7 @@ export const data = {
           'Extensión de VS Code que genera mensajes de commit automáticamente utilizando Google Gemini AI, siguiendo la especificación de Commits Convencionales.',
         link: 'https://marketplace.visualstudio.com/items?itemName=bernabe.gemcommit',
         expand: true,
+        tech: 'TypeScript',
         thumbnail: '/projects/gem-commit.webp'
       }
     ],
