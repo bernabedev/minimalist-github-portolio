@@ -3,75 +3,43 @@ import AboutMe from '@components/about-me.astro'
 import ChatBot from '@components/chat-bot.astro'
 import Experience from '@components/experience.astro'
 import GithubStats from '@components/github-stats.astro'
-import Footer from '@components/layout/footer.astro'
-import Header from '@components/layout/header.astro'
 import Projects from '@components/projects.astro'
 import Sidebar from '@components/sidebar.astro'
 import { data } from '@data'
-import { ClientRouter } from 'astro:transitions'
+import Layout from 'src/layouts/layout.astro'
 
-const { name, title, description } = data.en.profile
+const es = Astro.url.pathname.startsWith('/es')
+
+const { name, title, description } = es ? data.es.profile : data.en.profile
 const SITE = `https://${import.meta.env.HOST ?? 'bernabe.dev'}`
 const ogImage = `${SITE}/og-image.webp`
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{name} | {title}</title>
-    <meta name='description' content={description} />
-
-    <!-- Open Graph Tags -->
-    <meta property='og:title' content={title} />
-    <meta property='og:description' content={description} />
-    <meta property='og:image' content={ogImage} />
-    <meta property='og:type' content='website' />
-    <meta property='og:url' content={SITE} />
-
-    <!-- Twitter Cards (opcional) -->
-    <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:title' content={title} />
-    <meta name='twitter:description' content={description} />
-    <meta name='twitter:image' content={ogImage} />
-
-    <ClientRouter />
-
-    <script
-      is:inline
-      defer
-      src=`${import.meta.env.UMAMI_HOST}/script.js`
-      data-website-id={import.meta.env.UMAMI_WEBSITE_ID}></script>
-  </head>
-  <body class='relative min-h-screen text-black dark:text-white'>
-    <div
-      class='fixed bottom-0 top-0 z-[-2] hidden min-h-screen w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] dark:block dark:bg-[#030712] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] print:hidden'
-    >
+<Layout
+  title={`${name} | ${title}`}
+  description={description}
+  lang={es ? 'es' : 'en'}
+  ogImage={ogImage}
+>
+  <main class='relative min-h-screen text-black dark:text-white'>
+    <div class='grid grid-cols-1 gap-6 md:grid-cols-3 print:gap-4'>
+      {/* (Profile and Skills) Sidebar Section */}
+      <Sidebar />
+      {/* Main Section */}
+      <main class='md:col-span-2'>
+        {/* About Me Section */}
+        <AboutMe />
+        {/* Projects Section */}
+        <Projects />
+        {/* Experience Section */}
+        <Experience />
+        {/* GitHub Stats Section */}
+        <GithubStats />
+      </main>
     </div>
-    <Header />
-    <div class='container mx-auto max-w-screen-lg px-4 py-8'>
-      <div class='grid grid-cols-1 gap-6 md:grid-cols-3 print:gap-4'>
-        {/* (Profile and Skills) Sidebar Section */}
-        <Sidebar />
-        {/* Main Section */}
-        <main class='md:col-span-2'>
-          {/* About Me Section */}
-          <AboutMe />
-          {/* Projects Section */}
-          <Projects />
-          {/* Experience Section */}
-          <Experience />
-          {/* GitHub Stats Section */}
-          <GithubStats />
-        </main>
-      </div>
-      <Footer />
-    </div>
-    <ChatBot />
-  </body>
-</html>
+  </main>
+  <ChatBot />
+</Layout>
 
 <style is:global>
   @media print {

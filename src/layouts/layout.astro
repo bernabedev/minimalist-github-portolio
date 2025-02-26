@@ -1,0 +1,50 @@
+---
+import Footer from '@components/layout/footer.astro'
+import Header from '@components/layout/header.astro'
+import { ClientRouter } from 'astro:transitions'
+const SITE = `https://${import.meta.env.HOST ?? 'bernabe.dev'}`
+const { title, description, ogImage, lang = 'en' } = Astro.props
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+
+    <!-- Open Graph Tags -->
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={ogImage} />
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={SITE} />
+
+    <!-- Twitter Cards (opcional) -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={ogImage} />
+
+    <ClientRouter />
+
+    <script
+      is:inline
+      defer
+      src=`${import.meta.env.UMAMI_HOST}/script.js`
+      data-website-id={import.meta.env.UMAMI_WEBSITE_ID}></script>
+  </head>
+  <body>
+    <div
+      class='fixed bottom-0 top-0 z-[-2] hidden min-h-screen w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] dark:block dark:bg-[#030712] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] print:hidden'
+    >
+    </div>
+    <div class='container mx-auto max-w-screen-lg px-4 py-6'>
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>

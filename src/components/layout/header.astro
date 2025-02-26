@@ -19,7 +19,7 @@ const languages = [
 ---
 
 <header
-  class='no-print mx-auto flex max-w-screen-lg items-center justify-end gap-2 px-4 pt-2'
+  class='no-print mx-auto flex max-w-screen-lg items-center justify-end gap-2 px-4 pb-6 dark:text-white'
 >
   <button
     id='print'
@@ -29,7 +29,7 @@ const languages = [
     <Printer class='w-5' />
   </button>
   <ThemeToggle />
-  <button aria-label='Languages' class='bg-green-450 group relative'>
+  <button aria-label='Languages' class='bg-green-450 group relative z-50'>
     <Language
       class='w-5 opacity-80 transition-transform group-hover:scale-125'
     />
@@ -56,9 +56,6 @@ const languages = [
       </ul>
     </div>
   </button>
-  <!-- <a href={es ? '/' : '/es'} class='relative'>
-    <Language class='w-5 opacity-80' />
-  </a> -->
 </header>
 
 <script>
