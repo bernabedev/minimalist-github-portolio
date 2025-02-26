@@ -1,0 +1,39 @@
+---
+const { post } = Astro.props
+const { slug } = post
+const { title, description, pubDate, heroImage } = post.data
+
+const formattedDate = new Date(pubDate).toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+})
+---
+
+<article
+  class='overflow-hidden rounded-lg border shadow-md transition-shadow hover:shadow-lg'
+>
+  {
+    heroImage && (
+      <a href={`/blog/${slug}`}>
+        <img
+          src={heroImage}
+          alt={`Imagen para ${title}`}
+          class='h-48 w-full object-cover'
+        />
+      </a>
+    )
+  }
+  <div class='p-4'>
+    <h2 class='mb-2 text-xl font-semibold'>
+      <a href={`/blog/${slug}`} class='hover:text-blue-600'>
+        {title}
+      </a>
+    </h2>
+    <p class='text-gray-500 mb-2 text-sm'>{formattedDate}</p>
+    <p class='text-gray-700 mb-4'>{description}</p>
+    <a href={`/blog/${slug}`} class='text-blue-600 hover:underline'>
+      Leer más →
+    </a>
+  </div>
+</article>

@@ -1,0 +1,28 @@
+---
+import { getEntry } from 'astro:content'
+import Layout from 'src/layouts/layout.astro'
+
+// En modo SSR, obtenemos el slug desde los params
+const { slug } = Astro.params
+
+// Necesitamos validar que el slug existe
+if (!slug) {
+  return Astro.redirect('/blog')
+}
+
+// Intentamos obtener la entrada directamente por su slug
+const entry = await getEntry('blog', slug)
+
+// Si no se encuentra la entrada, redirigimos al blog
+if (!entry) {
+  console.error(`No se encontró ninguna entrada con el slug: ${slug}`)
+  return Astro.redirect('/blog')
+}
+
+// Renderizamos el contenido
+const { Content } = await entry.render()
+---
+
+<Layout {...entry.data}>
+  <Content />
+</Layout>

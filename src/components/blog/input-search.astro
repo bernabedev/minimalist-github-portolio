@@ -1,0 +1,58 @@
+---
+
+---
+
+<div class='mb-8'>
+  <div class='relative'>
+    <input
+      type='text'
+      id='search-input'
+      placeholder='Buscar posts...'
+      class='w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
+    />
+    <div
+      class='text-gray-400 absolute right-3 top-1/2 -translate-y-1/2 transform'
+    >
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        class='h-5 w-5'
+        fill='none'
+        viewBox='0 0 24 24'
+        stroke='currentColor'
+      >
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          stroke-width='2'
+          d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Esta función se ejecuta cuando el DOM está cargado
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search-input')
+    const articles = document.querySelectorAll('article')
+
+    searchInput?.addEventListener('input', (e) => {
+      const target = e.target as HTMLInputElement
+      const searchTerm = target.value.toLowerCase()
+
+      articles.forEach((article) => {
+        const title =
+          article.querySelector('h2')?.textContent?.toLowerCase() || ''
+        const description =
+          article.querySelector('p:nth-child(3)')?.textContent?.toLowerCase() ||
+          ''
+
+        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+          article.style.display = ''
+        } else {
+          article.style.display = 'none'
+        }
+      })
+    })
+  })
+</script>

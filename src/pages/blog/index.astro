@@ -1,0 +1,23 @@
+---
+import CardBlog from '@components/blog/card-blog.astro'
+import InputSearch from '@components/blog/input-search.astro'
+import { getCollection } from 'astro:content'
+import Layout from 'src/layouts/layout.astro'
+
+const allPosts = await getCollection('blog')
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+)
+---
+
+<Layout>
+  <main class='container mx-auto px-4 py-8'>
+    <h1 class='mb-8 text-4xl font-bold'>Mi Blog</h1>
+
+    <InputSearch />
+
+    <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+      {sortedPosts.map((post) => <CardBlog post={post} />)}
+    </div>
+  </main>
+</Layout>
