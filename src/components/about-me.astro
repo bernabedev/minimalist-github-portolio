@@ -1,8 +1,6 @@
 ---
 import { data } from '@data'
 import CardContent from '@ui/card/card-content.astro'
-import CardHeader from '@ui/card/card-header.astro'
-import CardTitle from '@ui/card/card-title.astro'
 import Card from '@ui/card/card.astro'
 const es = Astro.url.pathname.startsWith('/es')
 
@@ -11,11 +9,9 @@ const {
 } = es ? data.es : data.en
 ---
 
-<Card class='mb-6'>
-  <CardHeader>
-    <CardTitle>{title}</CardTitle>
-  </CardHeader>
+<Card class='mb-6 pt-6'>
   <CardContent>
+    <h4 class='mb-2 text-lg font-semibold'>{title}</h4>
     <p class='text-muted-foreground'>
       {description}
     </p>
