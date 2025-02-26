@@ -20,7 +20,7 @@ import Card from '@ui/card/card.astro'
             variant='secondary'
             className='dark:text-white/80 dark:border-white/15 flex gap-1 items-center'
           >
-            {icon && <img src={`/skills/${icon}`} class='h-3' />}
+            {icon && <img src={`/skills/${icon}`} class='h-3' alt={name} />}
             {name}
           </Badge>
         ))

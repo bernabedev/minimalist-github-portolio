@@ -12,6 +12,7 @@ const {
   <button
     id='open-chat-btn'
     class='fixed bottom-4 right-4 rounded-full bg-blue-600 p-2 transition hover:scale-110'
+    aria-label='Chat bot'
   >
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -46,12 +47,14 @@ const {
       <button
         id='chat-clear-btn'
         class='ml-auto rounded-md px-4 py-1 hover:bg-primary/10 dark:hover:bg-white/10'
+        aria-label='Clear chat'
       >
         {btnClear}
       </button>
       <button
         class='rounded-md p-1 hover:bg-primary/10 dark:hover:bg-white/10'
         id='chat-close-btn'
+        aria-label='Close chat'
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -87,6 +90,7 @@ const {
         <button
           id='chat-send-btn'
           class='absolute right-2 top-1/2 -translate-y-1/2 transform rounded-full bg-blue-600 p-2 text-white'
+          aria-label='Send message'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
