@@ -66,6 +66,15 @@ export const data = {
           'An intuitive and responsive e-commerce platform built using Vue.js, designed for efficient online shopping experiences.',
         tech: 'Vue.js',
         link: 'https://ecommerce.mundomovil.com.do'
+      },
+      {
+        title: 'GemCommit',
+        description:
+          'VS Code extension that generates commit messages automatically using Google Gemini AI, following the Conventional Commits specification.',
+        tech: 'TypeScript',
+        link: 'https://marketplace.visualstudio.com/items?itemName=bernabe.gemcommit',
+        expand: true,
+        thumbnail: '/projects/gem-commit.webp'
       }
     ],
     jobs: [
@@ -184,6 +193,14 @@ export const data = {
           'Una plataforma de e-commerce intuitiva y responsive construida con Vue.js, diseñada para experiencias de compra en línea eficientes.',
         tech: 'Vue.js',
         link: 'https://ecommerce.mundomovil.com.do'
+      },
+      {
+        title: 'GemCommit',
+        description:
+          'Extensión de VS Code que genera mensajes de commit automáticamente utilizando Google Gemini AI, siguiendo la especificación de Commits Convencionales.',
+        link: 'https://marketplace.visualstudio.com/items?itemName=bernabe.gemcommit',
+        expand: true,
+        thumbnail: '/projects/gem-commit.webp'
       }
     ],
     jobs: [
