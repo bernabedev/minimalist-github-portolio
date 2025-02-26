@@ -35,6 +35,7 @@ Projects:
 2. **Marketplace Backend** (NestJS) - [API Docs](https://api.bernalux.com/reference)
 3. **Marketplace Admin** (Next.js) - [Admin Panel](https://admin.bernalux.com)
 4. **E-commerce Platform** (Vue.js) - [Demo](https://ecommerce.mundomovil.com.do)
+5. **GemCommit** (TypeScript) - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=bernabe.gemcommit)
 
 Experience:
 - **Senior Web Developer** at Minicode SRL (2021 - Present)
