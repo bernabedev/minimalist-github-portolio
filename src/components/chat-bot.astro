@@ -175,7 +175,7 @@ const {
     )
 
     const p = document.createElement('p')
-    p.textContent = msg
+    p.innerHTML = msg
     li.appendChild(p)
     ul.appendChild(li)
 
@@ -260,10 +260,24 @@ const {
       }
 
       const p = document.createElement('p')
-      p.textContent = content
+      p.innerHTML = content
       li.appendChild(p)
       ul.appendChild(li)
     })
   }
   initializeMessages()
 </script>
+
+<style is:inline>
+  .chat-link {
+    color: #4c6fff;
+
+    @media (prefers-color-scheme: dark) {
+      color: #a2b3ff;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+</style>

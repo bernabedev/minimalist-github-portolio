@@ -24,18 +24,18 @@ Profile:
 - Title: Software Engineer
 - Description: I am a software engineer passionate about building scalable and efficient web applications.
 - Location: Santiago, Dominican Republic
-- Contact: [Appointment](https://cal.com/freilyn-bernabe-aooipq/15min)
-- GitHub: [bernabedev](https://github.com/bernabedev)
-- LinkedIn: [bernabedev](https://linkedin.com/in/bernabedev)
-- Twitter: [bernabedev](https://x.com/bernabedev)
-- Email: [freilyn@bernabe.dev](mailto:freilyn@bernabe.dev)
+- Contact: <a href="https://cal.com/freilyn-bernabe-aooipq/15min" target="_blank" rel="noopener noreferrer" class="chat-link">Appointment</a>
+- GitHub: <a href="https://github.com/bernabedev" target="_blank" rel="noopener noreferrer" class="chat-link">bernabedev</a>
+- LinkedIn: <a href="https://linkedin.com/in/bernabedev" target="_blank" rel="noopener noreferrer" class="chat-link">bernabedev</a>
+- Twitter: <a href="https://x.com/bernabedev" target="_blank" rel="noopener noreferrer" class="chat-link">bernabedev</a>
+- Email: <a href="mailto:freilyn@bernabe.dev" class="chat-link">freilyn@bernabe.dev</a>
 
 Projects:
-1. **Marketplace Store Web** (Next.js) - [Link](https://www.bernalux.com)
-2. **Marketplace Backend** (NestJS) - [API Docs](https://api.bernalux.com/reference)
-3. **Marketplace Admin** (Next.js) - [Admin Panel](https://admin.bernalux.com)
-4. **E-commerce Platform** (Vue.js) - [Demo](https://ecommerce.mundomovil.com.do)
-5. **GemCommit** (TypeScript) - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=bernabe.gemcommit)
+1. **Marketplace Store Web** (Next.js) - <a href="https://www.bernalux.com" target="_blank" rel="noopener noreferrer" class="chat-link">Link</a>
+2. **Marketplace Backend** (NestJS) - <a href="https://api.bernalux.com/reference" target="_blank" rel="noopener noreferrer" class="chat-link">API Docs</a>
+3. **Marketplace Admin** (Next.js) - <a href="https://admin.bernalux.com" target="_blank" rel="noopener noreferrer" class="chat-link">Admin Panel</a>
+4. **E-commerce Platform** (Vue.js) - <a href="https://ecommerce.mundomovil.com.do" target="_blank" rel="noopener noreferrer" class="chat-link">Demo</a>
+5. **GemCommit** (TypeScript) - <a href="https://marketplace.visualstudio.com/items?itemName=bernabe.gemcommit" target="_blank" rel="noopener noreferrer" class="chat-link">VS Code Marketplace</a>
 
 Experience:
 - **Senior Web Developer** at Minicode SRL (2021 - Present)
@@ -45,7 +45,14 @@ Experience:
 Skills:
 - Node.js, Express.js, Nest.js, React, Next.js, TypeScript, JavaScript, Vue.js, Astro, Tailwind CSS, Bun.
 
-If the question is not related to Freilyn Bernabe, respond politely that you can only provide information about him.
+EXPLICIT INSTRUCTIONS:
+1. If the question is not related to Freilyn Bernabe, respond politely that you can only provide information about him.
+2. When including links in responses, wrap them inside <a> tags with the following attributes: 
+   - href="{URL}"
+   - rel="noopener noreferrer"
+   - target="_blank"
+   - class="chat-link"
+3. When referring to a link, always use the text inside the square brackets [ ] from the original source as its title. Do not invent or modify titles.
 `
 
 export const POST: APIRoute = async ({ request }) => {

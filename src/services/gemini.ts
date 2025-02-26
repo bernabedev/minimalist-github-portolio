@@ -43,7 +43,7 @@ export async function streamGeminiResponse(prompt: string): Promise<void> {
 
       const chunk = decoder.decode(value, { stream: true })
       botResponse += chunk
-      updateBotMessage(botMessage, chunk)
+      updateBotMessage(botMessage, botResponse)
       scrollToBottom()
     }
 
@@ -90,7 +90,7 @@ function createBotMessage(): HTMLElement {
   )
 
   const p = document.createElement('p')
-  p.textContent = '' // Start empty to update during streaming
+  p.innerHTML = ''
   li.appendChild(p)
   ul.appendChild(li)
 
@@ -98,11 +98,13 @@ function createBotMessage(): HTMLElement {
 }
 
 /**
- * Updates the bot message in the UI by appending text in real-time
+ * Updates the bot message in the UI, rendering HTML links directly
  */
 function updateBotMessage(botMessage: HTMLElement, text: string): void {
   const p = botMessage.querySelector('p')
-  if (p) p.textContent += text // Append new text to the existing message
+  if (p) {
+    p.innerHTML = text
+  }
 }
 
 /**
