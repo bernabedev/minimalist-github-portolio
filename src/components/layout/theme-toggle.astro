@@ -3,6 +3,39 @@ import SunIcon from '@icons/sun.astro'
 import MoonIcon from '@icons/moon.astro'
 ---
 
+<!-- Inline script in the head to apply theme immediately -->
+<script is:inline>
+  function applyTheme() {
+    // Get system preference
+    const getSystemPreference = () => {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
+    }
+
+    // Check localStorage first, then fall back to system preference
+    const savedTheme = localStorage.getItem('theme') || 'system'
+
+    // Apply system or saved theme
+    let isDark = false
+    if (savedTheme === 'system') {
+      isDark = getSystemPreference() === 'dark'
+    } else {
+      isDark = savedTheme === 'dark'
+    }
+
+    // Apply before page renders
+    if (isDark) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }
+
+  // Execute immediately
+  applyTheme()
+</script>
+
 <script>
   const initThemeToggle = () => {
     const themeToggleBtn = document.getElementById('theme-toggle-btn')
@@ -24,10 +57,34 @@ import MoonIcon from '@icons/moon.astro'
       }
     }
 
-    const savedTheme = localStorage.getItem('theme') || 'light'
-    const isDark = savedTheme === 'dark'
-    document.documentElement.classList.toggle('dark', isDark)
+    // Get system preference
+    const getSystemPreference = () => {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
+    }
+
+    // Set initial icon state
+    const savedTheme = localStorage.getItem('theme') || 'system'
+    let isDark = false
+    if (savedTheme === 'system') {
+      isDark = getSystemPreference() === 'dark'
+    } else {
+      isDark = savedTheme === 'dark'
+    }
+
     updateIcons(isDark)
+
+    // Listen for system theme changes if using system theme
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', (e) => {
+        if (localStorage.getItem('theme') === 'system') {
+          const newIsDark = e.matches
+          document.documentElement.classList.toggle('dark', newIsDark)
+          updateIcons(newIsDark)
+        }
+      })
 
     themeToggleBtn?.addEventListener('click', toggleTheme)
   }
