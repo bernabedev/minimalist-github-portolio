@@ -25,7 +25,7 @@ const { projects } = es ? data.es : data.en
         target='_blank'
         class:list={['group flex', p.expand && 'md:col-span-2']}
       >
-        <Card class='transition group-hover:border-dashed group-hover:border-black/40 dark:group-hover:border-blue/30'>
+        <Card class='relative transition group-hover:border-dashed group-hover:border-black/40 dark:group-hover:border-blue/30'>
           <CardContent className='pt-6 h-full'>
             <div class='flex h-full flex-col'>
               <div class='mb-4 flex items-center gap-4'>
@@ -39,9 +39,16 @@ const { projects } = es ? data.es : data.en
                   </div>
                 )}
                 <div>
-                  <h4 class='font-semibold text-primary hover:underline dark:text-white'>
-                    {p.title}
-                  </h4>
+                  <div class='flex items-center justify-between gap-2'>
+                    <h4 class='font-semibold text-primary hover:underline dark:text-white'>
+                      {p.title}
+                    </h4>
+                    {p.badge && (
+                      <div class='border-blue-500 rounded-full border border-blue/80 px-4 py-0.5 text-xs text-blue-500 dark:border-blue/30'>
+                        {p.badge}
+                      </div>
+                    )}
+                  </div>
                   <p
                     class:list={[
                       'mt-1 line-clamp-3 text-sm text-muted-foreground',
