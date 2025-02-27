@@ -76,5 +76,7 @@ export default {
       blue: '#696ef7'
     }
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

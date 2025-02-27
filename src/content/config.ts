@@ -10,7 +10,11 @@ const blogCollection = defineCollection({
       .optional()
       .transform((val) => (val ? new Date(val) : undefined)),
     heroImage: z.string().optional(),
-    tags: z.array(z.string()).optional()
+    tags: z.array(z.string()).optional(),
+    author: z.object({
+      name: z.string(),
+      avatar: z.string().optional()
+    })
   })
 })
 

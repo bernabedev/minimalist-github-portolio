@@ -1,0 +1,101 @@
+---
+const { post } = Astro.props
+const { title, pubDate, description, heroImage, category, author } = post.data
+
+const formattedDate = new Date(pubDate).toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+})
+console.log({ author })
+---
+
+<article
+  class='featured-post dark:bg-gray-800 dark:border-gray-700 overflow-hidden rounded-2xl shadow-lg transition-shadow hover:shadow-xl dark:border'
+>
+  <div class='md:flex'>
+    <div class='relative md:w-2/5'>
+      {
+        heroImage ? (
+          <img
+            src={heroImage}
+            alt={`Imagen para ${title}`}
+            class='h-64 w-full object-cover md:h-full'
+          />
+        ) : (
+          <div class='from-indigo-500 flex h-64 w-full items-center justify-center bg-gradient-to-r to-purple-600 text-white md:h-full'>
+            <span class='text-2xl font-bold'>{title.charAt(0)}</span>
+          </div>
+        )
+      }
+      <span
+        class='bg-indigo-600 absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold text-white'
+      >
+        {category}
+      </span>
+    </div>
+
+    <div class='flex flex-col justify-between p-6 md:w-3/5 md:p-8'>
+      <div>
+        <h3 class='text-gray-900 mb-3 text-2xl font-bold dark:text-white'>
+          <a
+            href={`/blog/${post.slug}`}
+            class='hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors'
+          >
+            {title}
+          </a>
+        </h3>
+
+        <p class='text-gray-600 dark:text-gray-300 mb-4'>
+          {description}
+        </p>
+      </div>
+
+      <div class='mt-4 flex items-center justify-between'>
+        <div class='flex items-center'>
+          {
+            author?.avatar ? (
+              <img
+                src={author.avatar}
+                alt={author.name}
+                class='mr-3 h-10 w-10 rounded-full'
+              />
+            ) : (
+              <div class='bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300 mr-3 flex h-10 w-10 items-center justify-center rounded-full font-bold'>
+                {author?.name?.charAt(0) || 'A'}
+              </div>
+            )
+          }
+          <div>
+            <p class='text-gray-900 dark:text-gray-100 text-sm font-medium'>
+              {author?.name || 'Anónimo'}
+            </p>
+            <p class='text-gray-500 dark:text-gray-400 text-xs'>
+              {formattedDate}
+            </p>
+          </div>
+        </div>
+
+        <a
+          href={`/blog/${post.slug}`}
+          class='text-indigo-600 dark:text-indigo-400 inline-flex items-center text-sm font-medium hover:underline'
+        >
+          Leer más
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='ml-1 h-4 w-4'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M14 5l7 7m0 0l-7 7m7-7H3'></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>

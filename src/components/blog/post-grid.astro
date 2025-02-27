@@ -1,0 +1,156 @@
+---
+type Props = {
+  posts: any
+}
+const { posts } = Astro.props
+---
+
+<div class='post-grid grid-view grid grid-cols-1 gap-6 md:grid-cols-2'>
+  {
+    posts.map((post) => {
+      const { title, pubDate, description, heroImage, category, author } =
+        post.data
+
+      // Formatear fecha
+      const formattedDate = new Date(pubDate).toLocaleDateString('es-ES', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+
+      return (
+        <article
+          class='post-card dark:bg-gray-800 dark:border-gray-700 flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg dark:border'
+          data-category={category}
+        >
+          <div class='relative'>
+            {heroImage ? (
+              <img
+                src={heroImage}
+                alt={`Imagen para ${title}`}
+                class='h-52 w-full object-cover'
+              />
+            ) : (
+              <div class='from-indigo-400 flex h-52 w-full items-center justify-center bg-gradient-to-r to-purple-500'>
+                <span class='text-3xl font-bold text-white'>
+                  {title.charAt(0)}
+                </span>
+              </div>
+            )}
+            <span class='bg-indigo-600 absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-bold text-white'>
+              {category}
+            </span>
+          </div>
+
+          <div class='flex flex-grow flex-col p-5'>
+            <h3 class='text-gray-900 mb-2 line-clamp-2 text-xl font-bold dark:text-white'>
+              <a
+                href={`/blog/${post.slug}`}
+                class='hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors'
+              >
+                {title}
+              </a>
+            </h3>
+
+            <p class='text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 text-sm'>
+              {description}
+            </p>
+
+            <div class='border-gray-100 dark:border-gray-700 mt-auto flex items-center justify-between border-t pt-4'>
+              <div class='flex items-center'>
+                {author?.avatar ? (
+                  <img
+                    src={author.avatar}
+                    alt={author.name}
+                    class='mr-2 h-8 w-8 rounded-full'
+                  />
+                ) : (
+                  <div class='bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300 mr-2 flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold'>
+                    {author?.name?.charAt(0) || 'A'}
+                  </div>
+                )}
+                <div>
+                  <p class='text-gray-900 dark:text-gray-100 text-xs font-medium'>
+                    {author?.name || 'Anónimo'}
+                  </p>
+                  <p class='text-gray-500 dark:text-gray-400 text-xs'>
+                    {formattedDate}
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={`/blog/${post.slug}`}
+                class='text-indigo-600 dark:text-indigo-400 text-sm font-medium hover:underline'
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  class='h-5 w-5'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M14 5l7 7m0 0l-7 7m7-7H3'
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      )
+    })
+  }
+</div>
+
+<style>
+  /* Estilos para los diferentes modos de visualización */
+  .post-grid.grid-view {
+    display: grid;
+  }
+
+  .post-grid.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .post-grid.list-view .post-card {
+    flex-direction: row;
+    height: 160px;
+  }
+
+  .post-grid.list-view .post-card > div:first-child {
+    width: 25%;
+    min-width: 180px;
+  }
+
+  .post-grid.list-view .post-card > div:first-child img,
+  .post-grid.list-view .post-card > div:first-child div {
+    height: 100%;
+  }
+
+  .post-grid.list-view .post-card > div:last-child {
+    width: 75%;
+  }
+
+  @media (max-width: 768px) {
+    .post-grid.list-view .post-card {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .post-grid.list-view .post-card > div:first-child,
+    .post-grid.list-view .post-card > div:last-child {
+      width: 100%;
+    }
+
+    .post-grid.list-view .post-card > div:first-child img,
+    .post-grid.list-view .post-card > div:first-child div {
+      height: 200px;
+    }
+  }
+</style>

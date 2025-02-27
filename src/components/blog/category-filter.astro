@@ -1,0 +1,83 @@
+---
+// category-filter.astro
+export interface Props {
+  categories: string[]
+}
+
+const { categories } = Astro.props
+---
+
+<div class='category-filter'>
+  <div class='flex flex-wrap gap-2'>
+    <button
+      class='category-btn active bg-indigo-600 hover:bg-indigo-700 rounded-full px-4 py-2 text-sm font-medium text-white transition-colors'
+      data-category='all'
+    >
+      Todos
+    </button>
+
+    {
+      categories.map((category) => (
+        <button
+          class='category-btn bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full px-4 py-2 text-sm font-medium transition-colors'
+          data-category={category}
+        >
+          {category}
+        </button>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  // Gestionar la selección de categorías
+  const categoryButtons = document.querySelectorAll('.category-btn')
+
+  categoryButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      // Desactivar todos los botones
+      categoryButtons.forEach((btn) => {
+        btn.classList.remove('active', 'bg-indigo-600', 'text-white')
+        btn.classList.add(
+          'bg-gray-200',
+          'dark:bg-gray-700',
+          'text-gray-700',
+          'dark:text-gray-200'
+        )
+      })
+
+      // Activar el botón seleccionado
+      button.classList.add('active', 'bg-indigo-600', 'text-white')
+      button.classList.remove(
+        'bg-gray-200',
+        'dark:bg-gray-700',
+        'text-gray-700',
+        'dark:text-gray-200'
+      )
+
+      // Obtener la categoría seleccionada
+      const selectedCategory = button.getAttribute('data-category')
+      filterPostsByCategory(selectedCategory)
+    })
+  })
+
+  function filterPostsByCategory(category: string | null) {
+    // En un sitio real, aquí se implementaría la lógica de filtrado
+    // Por ejemplo, aplicando clases para mostrar/ocultar posts o haciendo una nueva petición
+    console.log(`Filtrando por categoría: ${category}`)
+
+    // Para demostración, podemos agregar una etiqueta que muestre la categoría seleccionada
+    const posts = document.querySelectorAll('.post-card')
+
+    posts.forEach((post) => {
+      if (
+        category === 'all' ||
+        post.getAttribute('data-category') === category
+      ) {
+        post.classList.remove('hidden')
+      } else {
+        post.classList.add('hidden')
+      }
+    })
+  }
+</script>
