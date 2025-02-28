@@ -1,6 +1,8 @@
 ---
+import type { CollectionEntry } from 'astro:content'
+
 type Props = {
-  posts: any
+  posts: CollectionEntry<'blog'>[]
 }
 const { posts } = Astro.props
 ---
@@ -20,7 +22,7 @@ const { posts } = Astro.props
 
       return (
         <article
-          class='post-card dark:bg-gray-800 dark:border-gray-700 flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:shadow-lg dark:border'
+          class='post-card flex flex-col overflow-hidden rounded-xl border border-[#a7a7a71a]/10 bg-[#fbfcff] transition-all duration-300 hover:shadow-lg dark:border dark:border-black dark:bg-primary/40'
           data-category={category}
         >
           <div class='relative'>
@@ -37,7 +39,7 @@ const { posts } = Astro.props
                 </span>
               </div>
             )}
-            <span class='bg-indigo-600 absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-bold text-white'>
+            <span class='absolute left-3 top-3 rounded-full bg-blue-500 px-3 py-1 text-xs font-bold text-white'>
               {category}
             </span>
           </div>
