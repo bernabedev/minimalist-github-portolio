@@ -77,6 +77,9 @@ const { name, title, description, socials, contact, location, email } = es
             <a
               href={`mailto:${email}?subject=Hola,%20${name}!%20Me%20interesa%20conocerte`}
               class='group flex items-center gap-2'
+              aria-label='Email'
+              target='_blank'
+              rel='noopener noreferrer'
             >
               <EmailIcon class='size-4' />
               <span class='transition-color text-sm text-muted-foreground duration-200 ease-linear group-hover:text-primary dark:group-hover:text-blue-500'>
