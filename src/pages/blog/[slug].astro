@@ -1,7 +1,7 @@
 ---
+import { Image } from 'astro:assets'
 import { getEntry } from 'astro:content'
 import Layout from 'src/layouts/layout.astro'
-import { Image } from 'astro:assets'
 import { formatDate } from 'src/utils/date-formatter'
 
 // En modo SSR, obtenemos el slug desde los params
@@ -90,46 +90,8 @@ const { title, description, pubDate, heroImage, tags } = entry.data
     }
 
     <!-- Content -->
-    <div class='prose prose-lg dark:prose-invert max-w-none'>
+    <div class='prose prose-lg max-w-none dark:prose-invert'>
       <Content />
     </div>
   </article>
 </Layout>
-
-<!-- <style>
-  /* Custom styling for code blocks */
-  :global(.prose pre) {
-    @apply bg-gray-900 dark:bg-gray-800 overflow-x-auto rounded-xl p-6 shadow-lg;
-  }
-
-  :global(.prose code) {
-    @apply font-mono text-sm;
-  }
-
-  :global(.prose h2) {
-    @apply text-gray-900 mb-6 mt-12 text-3xl font-bold dark:text-white;
-  }
-
-  :global(.prose h3) {
-    @apply text-gray-900 mb-4 mt-10 text-2xl font-semibold dark:text-white;
-  }
-
-  /* Custom styling for horizontal rules */
-  :global(.prose hr) {
-    @apply border-gray-200 dark:border-gray-800 my-12;
-  }
-
-  /* Better paragraph spacing */
-  :global(.prose p) {
-    @apply text-gray-700 dark:text-gray-300 my-6 leading-relaxed;
-  }
-
-  /* Improved list styling */
-  :global(.prose ul) {
-    @apply my-6 list-disc space-y-2 pl-6;
-  }
-
-  :global(.prose ol) {
-    @apply my-6 list-decimal space-y-2 pl-6;
-  }
-</style> -->
