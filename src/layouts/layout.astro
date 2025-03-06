@@ -36,7 +36,7 @@ const { title, description, ogImage, lang = 'en' } = Astro.props
       src=`${import.meta.env.UMAMI_HOST}/script.js`
       data-website-id={import.meta.env.UMAMI_WEBSITE_ID}></script>
   </head>
-  <body class='relative min-h-screen text-black dark:text-white'>
+  <body class='dark:text-white'>
     <div
       class='fixed bottom-0 top-0 z-[-2] hidden min-h-screen w-full bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] dark:block dark:bg-[#030712] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] print:hidden'
     >

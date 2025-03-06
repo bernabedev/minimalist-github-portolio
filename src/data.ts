@@ -74,7 +74,8 @@ export const data = {
         tech: 'TypeScript',
         link: 'https://marketplace.visualstudio.com/items?itemName=bernabe.gemcommit',
         expand: true,
-        thumbnail: '/projects/gem-commit.webp'
+        thumbnail: '/projects/gem-commit.webp',
+        badge: 'Try it now!'
       }
     ],
     jobs: [
@@ -201,7 +202,8 @@ export const data = {
         link: 'https://marketplace.visualstudio.com/items?itemName=bernabe.gemcommit',
         expand: true,
         tech: 'TypeScript',
-        thumbnail: '/projects/gem-commit.webp'
+        thumbnail: '/projects/gem-commit.webp',
+        badge: 'Pruebalo!'
       }
     ],
     jobs: [
