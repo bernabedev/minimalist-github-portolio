@@ -4,14 +4,14 @@
       type='text'
       id='search-input'
       placeholder='Buscar artículos...'
-      class='border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-800 dark:border-gray-700 w-full rounded-xl border px-4 py-3 pl-12 shadow-sm focus:ring-2 dark:text-white'
+      class='border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 w-full rounded-xl border px-4 py-3 pl-12 shadow-sm focus:ring-2 dark:border-black dark:bg-[#030609] dark:text-white'
     />
     <div
       class='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        class='text-gray-400 h-5 w-5'
+        class='h-5 w-5 dark:text-white/70'
         fill='none'
         viewBox='0 0 24 24'
         stroke='currentColor'
@@ -27,7 +27,7 @@
     </div>
     <button
       id='clear-search'
-      class='text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 absolute inset-y-0 right-0 flex hidden items-center pr-3'
+      class='text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 absolute inset-y-0 right-0 hidden items-center pr-3'
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -38,14 +38,16 @@
         <path
           fill-rule='evenodd'
           d='M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z'
-          clip-rule='evenodd'></path>
+          clip-rule='evenodd'
+        >
+        </path>
       </svg>
     </button>
   </div>
 
   <div
     id='search-results'
-    class='dark:bg-gray-800 border-gray-200 dark:border-gray-700 absolute z-10 mt-2 hidden max-h-96 w-full overflow-y-auto rounded-xl border bg-white shadow-lg'
+    class='absolute z-10 mt-2 hidden max-h-96 w-full overflow-y-auto rounded-xl border border-[#a7a7a71a]/10 bg-[#fbfcff] shadow-lg dark:border-black dark:bg-[#030609]'
   >
     <!-- Resultados de búsqueda dinámicos -->
   </div>
@@ -90,16 +92,16 @@
 
     // Simular resultados para demostración
     resultsContainer!.innerHTML = `
-        <div class="p-4 border-b border-gray-200 dark:border-gray-700">
-          <p class="text-sm text-gray-500 dark:text-gray-400">Resultados para "${query}"</p>
+        <div class="p-4 border-b dark:border-white/20">
+          <p class="text-sm text-black/50 dark:text-white/50">Resultados para "${query}"</p>
         </div>
         <div class="search-result p-4 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer">
-          <h3 class="font-medium text-indigo-600 dark:text-indigo-400">Introducción a Astro.js</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Descubre el poder de Astro para crear sitios web rápidos...</p>
+          <h3 class="font-medium text-black dark:text-white">Introducción a Astro.js</h3>
+          <p class="text-sm text-black/50 dark:text-white/50 mt-1">Descubre el poder de Astro para crear sitios web rápidos...</p>
         </div>
-        <div class="search-result p-4 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer border-t border-gray-100 dark:border-gray-700">
-          <h3 class="font-medium text-indigo-600 dark:text-indigo-400">Optimización de rendimiento en Astro</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Consejos y trucos para mejorar la velocidad de tu sitio Astro...</p>
+        <div class="search-result p-4 hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer border-t dark:border-white/20">
+          <h3 class="font-medium text-black dark:text-white">Optimización de rendimiento en Astro</h3>
+          <p class="text-sm text-black/50 dark:text-white/50 mt-1">Consejos y trucos para mejorar la velocidad de tu sitio Astro...</p>
         </div>
       `
   }
