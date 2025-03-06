@@ -1,0 +1,75 @@
+---
+title: 'Análisis Profundo de `structuredClone`: La Forma Moderna de Clonar Objetos en JavaScript'
+description: 'Aprende sobre `structuredClone`, una nueva característica de JavaScript que proporciona una manera eficiente de clonar objetos en profundidad y manejar estructuras complejas.'
+pubDate: '2025-02-27'
+heroImage: '/blog/structured-clone/structured-clone.webp'
+tags: ['javascript', 'desarrollo web', 'objetos']
+category: 'JavaScript'
+author: { name: 'Freilyn Bernabe' }
+lang: 'es'
+---
+
+import Prose from 'src/components/blog/prose.astro'
+
+# Análisis Profundo de `structuredClone`: La Forma Moderna de Clonar Objetos en JavaScript
+
+<Prose>
+
+Los desarrolladores de JavaScript a menudo necesitan crear copias profundas de objetos, pero los métodos tradicionales como `JSON.parse(JSON.stringify(obj))` tienen limitaciones. El método `structuredClone` es una solución integrada que maneja estructuras de datos complejas de manera eficiente.
+
+---
+
+## ¿Qué es `structuredClone`?
+
+`structuredClone` es una función nativa de JavaScript que clona profundamente objetos, incluidos aquellos con referencias circulares, `Map`, `Set`, `ArrayBuffer`, y más.
+
+---
+
+### Sintaxis
+
+```javascript
+const clone = structuredClone(value)
+```
+
+- **value**: El objeto o valor que se va a clonar.
+- **Retorna**: Una copia profunda del valor de entrada.
+
+---
+
+## Ejemplo de Uso
+
+### Clonando un Objeto
+
+```javascript
+const original = { name: 'Alice', details: { age: 25, city: 'New York' } }
+const copy = structuredClone(original)
+console.log(copy)
+```
+
+### Manejo de Estructuras de Datos Complejas
+
+```javascript
+const data = new Map([
+  ['key1', { name: 'John' }],
+  ['key2', { name: 'Jane' }]
+])
+
+const clonedData = structuredClone(data)
+console.log(clonedData)
+```
+
+---
+
+## ¿Por Qué Usar `structuredClone`?
+
+1. **Soporta estructuras complejas** como `Map`, `Set` y `ArrayBuffer`.
+2. **No pierde prototipos** en comparación con los métodos basados en `JSON.stringify`.
+3. **Maneja referencias circulares** de manera eficiente.
+
+---
+
+## Conclusión
+
+El método `structuredClone` es una solución revolucionaria para los desarrolladores de JavaScript. Simplifica la clonación profunda mientras maneja estructuras de datos avanzadas sin problemas. ¡Empiézalo a usar hoy para mejorar la lógica de clonación de objetos!
+
+</Prose>

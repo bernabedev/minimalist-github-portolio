@@ -1,0 +1,121 @@
+---
+title: 'Comprendiendo el Nuevo `groupBy` en Arrays de JavaScript'
+description: 'Un análisis profundo del nuevo método `groupBy` en JavaScript, con ejemplos prácticos y casos de uso.'
+pubDate: '2025-02-26'
+heroImage: '/blog/group-by-javascript/group-by-javascript.webp'
+tags: ['javascript', 'desarrollo web', 'arrays']
+category: 'JavaScript'
+author: { name: 'Freilyn Bernabe' }
+lang: 'es'
+---
+
+import Prose from 'src/components/blog/prose.astro'
+
+# Comprendiendo el Nuevo `groupBy` en Arrays de JavaScript
+
+<Prose>
+
+JavaScript evoluciona constantemente, introduciendo nuevas características que mejoran sus capacidades. Una de las incorporaciones más recientes es el método `groupBy` para arrays, que permite a los desarrolladores agrupar elementos de manera eficiente según un criterio especificado.
+
+---
+
+## ¿Qué es `groupBy`?
+
+El método `groupBy` proporciona una forma sencilla de categorizar elementos en un array en grupos según una función que determina sus claves. Este método mejora la legibilidad y reduce la necesidad de lógica personalizada para agrupar datos.
+
+---
+
+### Sintaxis
+
+```javascript
+Array.prototype.groupBy(callback: (element, index, array) => string | number): Object
+```
+
+- **callback**: Una función que recibe un elemento, su índice y el array completo. Debe devolver una cadena de texto o un número, que se utilizará como clave para la agrupación.
+- **Retorna**: Un objeto donde cada clave representa un grupo y su valor es un array con los elementos que pertenecen a dicho grupo.
+
+---
+
+## Ejemplo Práctico
+
+Veamos un ejemplo en el que agrupamos un array de personas según su edad.
+
+```javascript
+const people = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 30 },
+  { name: 'Charlie', age: 25 },
+  { name: 'David', age: 30 },
+  { name: 'Eve', age: 35 }
+]
+
+const groupedByAge = people.groupBy((person) => person.age)
+console.log(groupedByAge)
+```
+
+### Salida:
+
+```json
+{
+  "25": [
+    { "name": "Alice", "age": 25 },
+    { "name": "Charlie", "age": 25 }
+  ],
+  "30": [
+    { "name": "Bob", "age": 30 },
+    { "name": "David", "age": 30 }
+  ],
+  "35": [{ "name": "Eve", "age": 35 }]
+}
+```
+
+---
+
+## Más Casos de Uso
+
+### Agrupando Transacciones por Tipo
+
+```javascript
+const transactions = [
+  { id: 1, type: 'income', amount: 100 },
+  { id: 2, type: 'expense', amount: 50 },
+  { id: 3, type: 'income', amount: 200 },
+  { id: 4, type: 'expense', amount: 75 }
+]
+
+const groupedTransactions = transactions.groupBy((tx) => tx.type)
+console.log(groupedTransactions)
+```
+
+### Salida Esperada:
+
+```json
+{
+  "income": [
+    { "id": 1, "type": "income", "amount": 100 },
+    { "id": 3, "type": "income", "amount": 200 }
+  ],
+  "expense": [
+    { "id": 2, "type": "expense", "amount": 50 },
+    { "id": 4, "type": "expense", "amount": 75 }
+  ]
+}
+```
+
+---
+
+## ¿Por Qué `groupBy` es útil?
+
+1. **Legibilidad**: Hace que la lógica de agrupación sea más clara y concisa.
+2. **Rendimiento**: Reduce las iteraciones manuales sobre los arrays.
+3. **Funcionalidad Incorporada**: Elimina la necesidad de bibliotecas externas o implementaciones personalizadas.
+
+---
+
+## Conclusión
+
+El método `groupBy` es una poderosa adición a los arrays en JavaScript, facilitando la manipulación de datos. Simplifica tareas que antes requerían bucles complejos o librerías externas, ofreciendo un enfoque más declarativo para agrupar datos.
+
+Mantente al día con las últimas características de JavaScript y comienza a utilizar `groupBy` para escribir código más limpio y mantenible!
+
+</Prose>

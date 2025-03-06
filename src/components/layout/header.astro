@@ -3,30 +3,37 @@ import Language from '@icons/language.astro'
 import ThemeToggle from './theme-toggle.astro'
 import Printer from '@icons/printer.astro'
 import Home from '@icons/home.astro'
-const es = Astro.url.pathname.startsWith('/es')
 
-const languages = [
-  {
-    key: 'en',
-    label: 'English',
-    href: '/'
-  },
-  {
-    key: 'es',
-    label: 'Español',
-    href: '/es'
-  }
-]
-
-// Genera los breadcrumbs basados en la URL actual
+// Get current path and language info
 const path = Astro.url.pathname
 const pathSegments = path.split('/').filter((segment) => segment !== '')
 const isSpanish = pathSegments[0] === 'es'
 const segments = isSpanish ? pathSegments.slice(1) : pathSegments
 
+// Create language alternatives for current path
+const currentPathWithoutLang = '/' + segments.join('/')
+const enPath = currentPathWithoutLang === '/' ? '/' : currentPathWithoutLang
+const esPath =
+  currentPathWithoutLang === '/' ? '/es' : '/es' + currentPathWithoutLang
+
+// Define language options with dynamic paths
+const languages = [
+  {
+    key: 'en',
+    label: 'English',
+    href: enPath
+  },
+  {
+    key: 'es',
+    label: 'Español',
+    href: esPath
+  }
+]
+
+// Genera los breadcrumbs basados en la URL actual
 // Construye los breadcrumbs con sus rutas
 const breadcrumbs = []
-let currentPath = isSpanish ? '/es' : '/'
+let currentBreadcrumbPath = isSpanish ? '/es' : '/'
 
 // Agrega el Home al inicio
 breadcrumbs.push({
@@ -37,11 +44,11 @@ breadcrumbs.push({
 
 // Agrega los segmentos restantes
 segments.forEach((segment, index) => {
-  currentPath += `${segment}`
+  currentBreadcrumbPath += `/${segment}`
   breadcrumbs.push({
     label:
       segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
-    path: currentPath,
+    path: currentBreadcrumbPath,
     isLast: index === segments.length - 1
   })
 })
@@ -109,7 +116,7 @@ segments.forEach((segment, index) => {
             <li
               class:list={[
                 'rounded-md text-start hover:bg-primary/5 dark:hover:bg-white/5',
-                ((es && key == 'es') || (!es && key == 'en')) &&
+                ((isSpanish && key == 'es') || (!isSpanish && key == 'en')) &&
                   'pointer-events-none bg-primary/5 dark:bg-white/5'
               ]}
             >

@@ -15,7 +15,8 @@ const blogCollection = defineCollection({
       name: z.string(),
       avatar: z.string().optional()
     }),
-    category: z.string()
+    category: z.string(),
+    lang: z.enum(['en', 'es'])
   })
 })
 

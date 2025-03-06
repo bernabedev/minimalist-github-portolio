@@ -6,11 +6,14 @@ import PostGrid from '@components/blog/post-grid.astro'
 import SearchBar from '@components/blog/search-bar.astro'
 import CategoryFilter from '@components/blog/category-filter.astro'
 
+const es = Astro.url.pathname.startsWith('/es')
+const lang = es ? 'es' : 'en'
+
 // Obtener y ordenar los posts
 const allPosts = await getCollection('blog')
-const sortedPosts = allPosts.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-)
+const sortedPosts = allPosts
+  .filter((item) => item.data.lang === lang)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 
 // Obtener el post más reciente para destacarlo
 const featuredPost = sortedPosts[0]
