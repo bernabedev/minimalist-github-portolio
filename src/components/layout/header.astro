@@ -2,6 +2,7 @@
 import Language from '@icons/language.astro'
 import ThemeToggle from './theme-toggle.astro'
 import Printer from '@icons/printer.astro'
+import Home from '@icons/home.astro'
 const es = Astro.url.pathname.startsWith('/es')
 
 const languages = [
@@ -16,11 +17,76 @@ const languages = [
     href: '/es'
   }
 ]
+
+// Genera los breadcrumbs basados en la URL actual
+const path = Astro.url.pathname
+const pathSegments = path.split('/').filter((segment) => segment !== '')
+const isSpanish = pathSegments[0] === 'es'
+const segments = isSpanish ? pathSegments.slice(1) : pathSegments
+
+// Construye los breadcrumbs con sus rutas
+const breadcrumbs = []
+let currentPath = isSpanish ? '/es' : '/'
+
+// Agrega el Home al inicio
+breadcrumbs.push({
+  label: isSpanish ? 'Inicio' : 'Home',
+  path: isSpanish ? '/es' : '/',
+  isLast: segments.length === 0
+})
+
+// Agrega los segmentos restantes
+segments.forEach((segment, index) => {
+  currentPath += `${segment}`
+  breadcrumbs.push({
+    label:
+      segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
+    path: currentPath,
+    isLast: index === segments.length - 1
+  })
+})
 ---
 
 <header
   class='no-print mx-auto flex max-w-screen-lg items-center justify-end gap-2 px-4 pb-6 dark:text-white'
 >
+  <!-- Breadcrumbs -->
+  <div class='w-full py-3'>
+    <nav class='flex' aria-label='Breadcrumb'>
+      <ol class='inline-flex items-center space-x-1 md:space-x-2'>
+        {
+          breadcrumbs.length > 1 &&
+            breadcrumbs.map((crumb, index) => (
+              <li class='inline-flex items-center'>
+                {index > 0 && (
+                  <span class='text-gray-400 dark:text-gray-500 mx-1 me-2'>
+                    |
+                  </span>
+                )}
+                {crumb.isLast ? (
+                  <span
+                    class='text-sm font-medium text-primary/50 dark:text-white/50'
+                    aria-current='page'
+                  >
+                    {crumb.label}
+                  </span>
+                ) : (
+                  <a
+                    href={crumb.path}
+                    class='dark:hover:text-primary-light group inline-flex items-center text-sm text-black hover:text-primary hover:underline dark:text-white'
+                  >
+                    {index === 0 && (
+                      <Home class='mr-1 h-3.5 w-3.5 transition group-hover:scale-110' />
+                    )}
+                    {crumb.label}
+                  </a>
+                )}
+              </li>
+            ))
+        }
+      </ol>
+    </nav>
+  </div>
   <button
     id='print'
     class='items-center px-0 py-0 transition-transform hover:scale-125'
