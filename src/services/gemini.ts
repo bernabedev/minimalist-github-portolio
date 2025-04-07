@@ -115,6 +115,7 @@ function toggleChatControls(isEnabled: boolean): void {
   if ($input) {
     $input.disabled = !isEnabled
     $input.style.opacity = isEnabled ? '1' : '0.5'
+    $input.focus()
   }
 
   if ($sendBtn) {
