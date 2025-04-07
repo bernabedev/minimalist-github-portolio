@@ -145,14 +145,16 @@ const {
 
   function sendMessage(msg: string) {
     messages.push({ role: 'user', content: msg })
-    if ($input) $input.value = ''
+    if ($input) {
+      $input.value = ''
+    }
 
     $messages?.classList.remove('hidden')
     $placeholder?.classList.add('hidden')
 
     let ul = $messages?.querySelector('ul')
 
-    // Si no existe un ul dentro de $messages, lo creamos
+    // If no ul exists inside $messages, create one
     if (!ul) {
       ul = document.createElement('ul')
       ul.classList.add('flex', 'flex-col', 'gap-4')
@@ -224,14 +226,14 @@ const {
 
     let ul = $messages?.querySelector('ul')
 
-    // Si no existe un ul dentro de $messages, lo creamos
+    // If no ul exists inside $messages, create one
     if (!ul) {
       ul = document.createElement('ul')
       ul.classList.add('flex', 'flex-col', 'gap-4')
       $messages?.appendChild(ul)
     }
 
-    // Limpiamos el ul antes de agregar los mensajes
+    // Clear the ul before adding messages
     ul.innerHTML = ''
 
     messages.forEach(({ role, content }) => {
