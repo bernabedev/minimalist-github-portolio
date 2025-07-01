@@ -40,6 +40,16 @@ export const data = {
     },
     projects: [
       {
+        title: 'Zintask',
+        description:
+          'Your ultimate command center for tasks, projects, and team collaboration. Streamline your workflow, boost productivity, and find your focus.',
+        tech: 'Bun + Next.js',
+        link: 'https://zintask.com',
+        expand: true,
+        thumbnail: '/projects/zintask.webp',
+        badge: 'Try it now!'
+      },
+      {
         title: 'Marketplace Store Web',
         description:
           'A modern marketplace platform developed using Next.js, enabling seamless buying and selling of products with advanced features.',
@@ -167,6 +177,16 @@ export const data = {
         'Me encanta convertir ideas en aplicaciones web potentes y escalables. Como Ingeniero de Software, trabajo con Next.js, NestJS, Vue.js y Astro para crear experiencias de usuario fluidas y de alto rendimiento. 🚀 ¡Construyamos algo increíble juntos!'
     },
     projects: [
+      {
+        title: 'Zintask',
+        description:
+          'Tu centro de mando definitivo para tareas, proyectos y colaboración en equipo. Optimiza tu flujo de trabajo, aumenta la productividad y recupera tu enfoque.',
+        tech: 'Bun + Next.js',
+        link: 'https://zintask.com',
+        expand: true,
+        thumbnail: '/projects/zintask.webp',
+        badge: 'Try it now!'
+      },
       {
         title: 'Marketplace Store Web',
         description:
