@@ -4,6 +4,10 @@ import Header from '@components/layout/header.astro'
 import { ClientRouter } from 'astro:transitions'
 const SITE = `https://${import.meta.env.HOST ?? 'bernabe.dev'}`
 const { title, description, ogImage, lang = 'en' } = Astro.props
+
+const appKey = import.meta.env.APTABASE_KEY || 'A-SH-7170284191'
+const host = import.meta.env.APTABASE_HOST || 'https://aptabase.dokploy.dev'
+const devMode = import.meta.env.NODE_ENV === 'development'
 ---
 
 <html lang={lang}>
@@ -46,5 +50,71 @@ const { title, description, ogImage, lang = 'en' } = Astro.props
       <slot />
       <Footer />
     </div>
+
+    <script type='module' is:inline define:vars={{ appKey, host, devMode }}>
+      const API_URL = `${host}/api/v0/events`
+      function newSessionId() {
+        const epochSec = Math.floor(Date.now() / 1000)
+        const rand = Math.floor(Math.random() * 1e8)
+          .toString()
+          .padStart(8, '0')
+        return `${epochSec}${rand}`
+      }
+      const sessionId = newSessionId()
+      const sdkVersion = 'custom-fetch-sdk@1.0.0'
+
+      async function sendEvent(eventName, props = {}) {
+        const eventPayload = [
+          {
+            timestamp: new Date().toISOString(),
+            sessionId,
+            eventName,
+            systemProps: {
+              locale: navigator.language,
+              osName: navigator.platform,
+              isDebug: devMode,
+              appVersion: '1.0.0',
+              sdkVersion
+            },
+            props
+          }
+        ]
+
+        try {
+          await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'App-Key': appKey
+            },
+            credentials: 'omit',
+            body: JSON.stringify(eventPayload)
+          })
+        } catch (err) {
+          console.error('Error sending event to Aptabase', err)
+        }
+      }
+
+      function onRouteChange() {
+        sendEvent('page_changed', {
+          path: window.location.pathname + window.location.search
+        })
+      }
+
+      onRouteChange()
+
+      window.addEventListener('popstate', onRouteChange)
+
+      const _push = history.pushState
+      history.pushState = function (...args) {
+        _push.apply(this, args)
+        onRouteChange()
+      }
+      const _replace = history.replaceState
+      history.replaceState = function (...args) {
+        _replace.apply(this, args)
+        onRouteChange()
+      }
+    </script>
   </body>
 </html>
