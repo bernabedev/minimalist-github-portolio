@@ -40,6 +40,16 @@ export const data = {
     },
     projects: [
       {
+        title: 'Monelyx',
+        description:
+          'Monelyx is not just a expense tracker. It is a design system for your financial life. Precise, fast and designed for excellence.',
+        tech: 'Bklar + Next.js',
+        link: 'https://monelyx.com',
+        expand: true,
+        thumbnail: '/projects/monelyx.webp',
+        badge: 'New!'
+      },
+      {
         title: 'Zintask',
         description:
           'Your ultimate command center for tasks, projects, and team collaboration. Streamline your workflow, boost productivity, and find your focus.',
@@ -177,6 +187,16 @@ export const data = {
         'Me encanta convertir ideas en aplicaciones web potentes y escalables. Como Ingeniero de Software, trabajo con Next.js, NestJS, Vue.js y Astro para crear experiencias de usuario fluidas y de alto rendimiento. 🚀 ¡Construyamos algo increíble juntos!'
     },
     projects: [
+      {
+        title: 'Monelyx',
+        description:
+          'Monelyx no es solo un tracker de gastos. Es un sistema de diseño para tu vida financiera. Preciso, rápido y diseñado para la excelencia.',
+        tech: 'Bklar + Next.js',
+        link: 'https://monelyx.com',
+        expand: true,
+        thumbnail: '/projects/monelyx.webp',
+        badge: 'New!'
+      },
       {
         title: 'Zintask',
         description:
