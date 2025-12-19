@@ -9,7 +9,7 @@ export const data = {
       title: 'Software Engineer',
       description:
         'I am a software engineer with a passion for building scalable and efficient web applications.',
-      location: 'Santiago, Dominican Republic',
+      location: 'Rhode Island, United States',
       contact: {
         link: 'https://cal.com/freilyn-bernabe-aooipq/15min',
         label: 'Contact Me'
@@ -157,7 +157,7 @@ export const data = {
       title: 'Ingeniero de Software',
       description:
         'Soy un ingeniero de software con pasión por construir aplicaciones web escalables y eficientes.',
-      location: 'Santiago, República Dominicana',
+      location: 'Rhode Island, United States',
       contact: {
         link: 'https://cal.com/freilyn-bernabe-aooipq/15min',
         label: 'Contáctame'
